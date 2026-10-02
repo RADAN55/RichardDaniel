@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EL 9–12 Combined Block: 36-Week Curriculum Map · EL Publishing</title>
+<meta name="description" content="A research-based 36-week curriculum map for a combined Emerging + Progressing (ELPA21 Levels 1–4) English Learner block, grades 9–12, Mississippi. One theme calendar, two language lanes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E2761; --navy-d:#141a44; --gold:#C9A227; --gold-l:#f3e6b8;
+  --ink:#1b1b22; --muted:#5a5f73; --line:#e3e5ee; --paper:#ffffff; --bg:#f6f6fa; --soft:#eef0f8;
+  --rs:#1b7a3c; --rm:#2b6cb0; --rmin:#8a6d1f; --rh:#8b4a9e; --pc:#4b5563; --inf:#b4531d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:70px}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--navy)}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+a:hover{color:var(--gold)}
+/* top bar */
+.bar{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--gold)}
+.bar .in{max-width:1240px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-family:Fraunces,serif;font-weight:900;font-size:1.05rem;letter-spacing:.2px;white-space:nowrap}
+.brand small{display:block;font-family:Inter;font-weight:500;font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+nav.top{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.top a{color:#fff;text-decoration:none;font-size:.8rem;font-weight:500;padding:6px 10px;border-radius:6px}
+nav.top a:hover{background:rgba(255,255,255,.12);color:var(--gold)}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:56px 16px 48px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(201,162,39,.22),transparent 45%)}
+.hero .in{max-width:1240px;margin:0 auto;position:relative}
+.kicker{color:var(--gold);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.5vw,3.3rem);margin:.4rem 0 .6rem;max-width:18ch;font-weight:900}
+.hero p.lead{max-width:62ch;font-size:1.05rem;color:#dfe2f0;margin:0 0 1.4rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;max-width:900px}
+.fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px}
+.fact b{display:block;font-family:Fraunces,serif;font-size:1.5rem;color:var(--gold);line-height:1.1}
+.fact span{font-size:.8rem;color:#cfd3e6}
+/* layout */
+.wrap{max-width:1240px;margin:0 auto;padding:16px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px 24px;margin:24px 0;box-shadow:0 1px 2px rgba(30,39,97,.04)}
+section h2{font-size:clamp(1.4rem,2.6vw,2rem);margin:0 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold-l)}
+section h3{font-size:1.25rem;margin:1.6rem 0 .6rem}
+section p{max-width:82ch}
+.intro{background:var(--soft);border-left:5px solid var(--gold);border-radius:10px;padding:20px 22px;margin:24px 0}
+.intro p{max-width:none;margin:.5rem 0}
+.intro p:first-child{font-size:1.02rem}
+/* tables */
+.tscroll{overflow-x:auto;margin:1rem -8px;padding:0 8px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.84rem;background:#fff}
+thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 10px;font-weight:600;position:sticky;top:62px;z-index:2;font-size:.78rem;letter-spacing:.02em}
+tbody td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even) td{background:#fafbff}
+tbody tr:hover td{background:var(--gold-l)}
+td strong{color:var(--navy)}
+#weekmap td:first-child{white-space:nowrap;font-weight:600}
+#weekmap tr[data-unit="1"] td:first-child{border-left:5px solid #1E2761}
+#weekmap tr[data-unit="2"] td:first-child{border-left:5px solid #2b6cb0}
+#weekmap tr[data-unit="3"] td:first-child{border-left:5px solid #1b7a3c}
+#weekmap tr[data-unit="4"] td:first-child{border-left:5px solid #8b4a9e}
+#weekmap tr[data-unit="5"] td:first-child{border-left:5px solid #0e7c86}
+#weekmap tr[data-unit="6"] td:first-child{border-left:5px solid #b4531d}
+#weekmap tr[data-unit="7"] td:first-child{border-left:5px solid #C9A227}
+#weekmap tr[data-unit="8"] td:first-child{border-left:5px solid #6b7280}
+#weekmap tr.hide{display:none}
+/* filter bar */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 6px}
+.filters span.lbl{font-size:.8rem;font-weight:600;color:var(--muted);margin-right:4px}
+.fbtn{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:Inter}
+.fbtn.on{background:var(--navy);color:#fff}
+.fbtn.gold.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.search{margin-left:auto;border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.85rem;font-family:Inter;min-width:220px}
+/* tags */
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:999px;color:#fff;vertical-align:middle;white-space:nowrap}
+.tag.rs{background:var(--rs)}.tag.rm{background:var(--rm)}.tag.rmin{background:var(--rmin)}.tag.rh{background:var(--rh)}.tag.pc{background:var(--pc)}.tag.inf{background:var(--inf)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.8rem;margin:10px 0 0}
+.legend span{display:flex;align-items:center;gap:6px}
+/* print */
+.toolbar{display:flex;gap:10px;justify-content:flex-end;margin:8px 0 0}
+.pbtn{background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:8px 14px;font-weight:700;font-family:Inter;cursor:pointer;font-size:.85rem}
+footer{background:var(--navy);color:#cfd3e6;padding:36px 16px;margin-top:40px;border-top:3px solid var(--gold);font-size:.85rem}
+footer .in{max-width:1240px;margin:0 auto}
+footer b{color:#fff;font-family:Fraunces,serif;font-size:1.05rem}
+footer a{color:var(--gold)}
+@media (max-width:720px){
+  section{padding:20px 14px}
+  thead th{top:0;position:static}
+  .search{min-width:0;width:100%;margin-left:0}
+}
+@media print{
+  .bar,.toolbar,.filters{display:none}
+  body{background:#fff;font-size:11px}
+  section{break-inside:auto;border:none;box-shadow:none;padding:0;margin:14px 0}
+  table{font-size:9px} thead th{position:static;background:#1E2761!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hero{padding:24px 0}
+  #weekmap tr.hide{display:table-row}
+  a{text-decoration:none;color:inherit}
+  @page{size:landscape;margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <div class="brand">EL Publishing<small>Many Voices · One Storm</small></div>
+  <nav class="top"><a href="#accountability-frame-exit-depends-on-the">Accountability</a><a href="#what-the-evidence-actually-supports-and-">Evidence</a><a href="#the-36-week-scope-and-sequence">36-Week Map</a><a href="#the-literacy-strand-contrastive-phonics-">Literacy Strand</a><a href="#the-90-minute-block-and-the-five-day-cyc">Block &amp; Cycle</a><a href="#assessment-and-pacing-calendar">Assessment Calendar</a><a href="#gaps-and-what-to-verify-before-publishin">Gaps</a><a href="#conclusion">Conclusion</a></nav>
+</div></div>
+
+<header class="hero"><div class="in">
+  <div class="kicker">Laurel High School · Grades 9–12 · 2026–2027</div>
+  <h1>One theme calendar, two language lanes</h1>
+  <p class="lead">A research-based 36-week curriculum map for a combined <strong>Emerging</strong> (ELPA21 Levels 1–2) and <strong>Progressing</strong> (Levels 3–4) English Learner block in Mississippi — anchored to the ten ELP Standards, built backward from the ELPT window, and tagged by evidence strength.</p>
+  <div class="facts">
+    <div class="fact"><b>36</b><span>weeks + May closeout</span></div>
+    <div class="fact"><b>8</b><span>thematic units</span></div>
+    <div class="fact"><b>90</b><span>minute block template</span></div>
+    <div class="fact"><b>4</b><span>domain benchmarks tied to SET/LSP reviews</span></div>
+    <div class="fact"><b>Mar 1–Apr 16</b><span>ELPT window 2027</span></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="toolbar"><button class="pbtn" onclick="window.print()">Print / Save as PDF</button></div>
+  <div class="intro"><p>A research-defensible 36-week curriculum for a combined Emerging/Progressing 9–12 block in Mississippi should run <strong>one shared theme calendar with two tiered language lanes</strong> — the pattern Harford County uses for ESOL I and II, where both courses keep identical units and week counts while grammar and text types escalate (<a href="https://hcps.org/departments/docs/InstructionalSupport/ESOL/ESOL-I-Curriculum-Map.pdf">HCPS ESOL I</a>; <a href="https://hcps.org/departments/docs/InstructionalSupport/ESOL/ESOL-II-Curriculum-Map.pdf">HCPS ESOL II</a>) — anchored to the ten CCSSO/ELPA21 ELP Standards and built backward from the <strong>ELPT window of March 1 – April 16, 2027</strong> (<a href="https://content.myconnectsuite.com/api/documents/d62ac0131dae475c882d5d2a1fa28850">MDE 2026–27 Testing Calendar</a>). The eight units below follow the sequence that four independent newcomer maps converge on (self and school → life domains → narrative past → content-area language → argument → research → future), while the Emerging lane climbs the Standard 10 verb-tense ladder (present/going-to/simple past at Level 1; irregular past, past progressive, future at Level 2) and the Progressing lane climbs the Level 3–4 rungs (present perfect, past perfect, complex phrases and clauses) (<a href="https://www.oregon.gov/ode/students-and-family/equity/EngLearners/Documents/ELPStandardsGrade9-12.pdf">Oregon ODE, ELP Standards 9–12</a>). Only a handful of instructional ingredients carry strong experimental evidence — intensive academic vocabulary anchored in short informational texts, daily structured pair/small-group talk about content, and peer-mediated learning generally (<a href="https://ies.ed.gov/ncee/WWC/Docs/PracticeGuide/wwc_ellwebinarslides_052114.pdf">IES/WWC</a>; <a href="https://ir.vanderbilt.edu/items/b658f302-110e-41f6-9ad8-7e161aee92c3">Cole 2012</a>) — so the 90-minute block template puts those three at its center and treats the teacher-led 3–5-student group (moderate evidence) as the daily home for newcomers. The week-by-week map rotates every ELPA21 task family from the grades 9–12 blueprint (26 reading, 23 listening, 6 speaking, 5 writing items) so that the Monday-to-Thursday mirror tasks accumulate into quarterly four-domain benchmarks timed to the state's required quarterly LSP/SET reviews (<a href="https://www.oregon.gov/ode/educator-resources/assessment/Documents/elpa21testspecsg9-12.pdf">Oregon ODE, ELPA21 Test Specs 9–12</a>; <a href="https://content.schoolinsites.com/api/documents/b552f0fe8ddf4b76b207e3adc2e9270f.pdf">MDE 2016 EL Guide</a>). The honest caveats: no experimental study tests a 90-minute mixed-level secondary ELD block, the National Academies report explicitly declines to rate practices for grades 9–12, the Laurel 2026–27 calendar was not retrievable, and every mdek12.org document returned 403 — so the Mississippi policy citations below come from MDE documents mirrored on district sites and should be reconciled against the current MDE EL Guidelines before being quoted as policy.</p>
+<p><strong>Evidence tags used throughout:</strong> <span class="tag rs">R-strong</span> / <span class="tag rm">R-moderate</span> / <span class="tag rmin">R-minimal</span> = formally rated experimental evidence (WWC, Saunders et al., meta-analysis); <span class="tag rh">R-hyp</span> = guideline the authors themselves rate as hypothesis-level or non-EL-derived; <span class="tag pc">PC</span> = practitioner consensus across frameworks or district maps; <span class="tag inf">INF</span> = this report's own inference or design choice.</p>
+</div>
+  <section id="accountability-frame-exit-depends-on-the"><h2>Accountability frame: exit depends on the weakest domain, growth on the overall score</h2>
+<p>Everything in this map answers to two scoring rules. First, ELPA21 declares a student <strong>Proficient only when all four domains reach Level 4 or 5</strong>; Emerging means all four domains at Levels 1–2, and Progressing is every other combination (<a href="https://www.oregon.gov/ode/educator-resources/assessment/Documents/elpa21_proficiency_descriptors.pdf">Oregon ODE, ELPA21 Proficiency Descriptors</a>). A Mississippi district plan restating MDE policy confirms the same rule and adds that exited students are monitored for at least four years with a SET review every nine weeks (<a href="https://resources.finalsite.net/images/v1782355832/mpsdnoworg1/evmoepguikw0irdl9nrz/MPSDELDistrictPlan2025-2026.pdf">Meridian PSD EL Plan 2025–26</a>). Because the 9–12 writing and reading cut scores sit highest (Writing Level 4 begins at 615, Reading at 631, versus Listening 571 and Speaking 593), a Progressing student is most often held back by writing or reading, which is why the Progressing lane in this map front-loads paragraph and essay work and rotates discrete editing tasks every unit (<a href="https://www.education.ne.gov/wp-content/uploads/2017/07/Finalized_Grade_Band_9-12_ALDs_all_domains.pdf">Nebraska DOE ALDs 9–12</a>). Second, the §15 EL Progress component — <strong>5% of the accountability model</strong> — is computed from the ELPT <em>overall scale score</em>: annual goal = (proficiency cut at year 5 − prior-year score) ÷ years remaining, with progress rate bounded between 0 and 1 (<a href="https://www.law.cornell.edu/regulations/mississippi/7-Miss-Code-R-MISSISSIPPI-STATEWIDE-ACCOUNTABILITY-SYSTEM-BUSINESS-RULES">MS Accountability Business Rules</a>). The practical implication <span class="tag inf">INF</span> is that each student's LSP goal in Ellevation should be expressed as a scale-score target on a five-year trajectory, not just a level label, and that the Emerging lane earns the school just as many progress points as the Progressing lane when it moves students one-fifth of the way to the cut.</p>
+<p>The standards themselves are the CCSSO 2014 ELP Standards adopted by every ELPA21 state, with Standards 1–7 as "content-specific practices" and 8–10 as the "micro-level linguistic features" that serve them (<a href="https://www.oregon.gov/ode/students-and-family/equity/EngLearners/Documents/ELPStandardsGrade9-12_ELAGrade9-10Final.pdf">Oregon ODE, ELP 9–12 with ELA correspondences</a>). For walkthrough posting, the same CCSSO document supplies the MS CCRS ELA correspondence (Mississippi uses CCSS numbering): ELP 1 ↔ RL/RI.1, 2, 3, 7 and SL.2; ELP 2 ↔ W.6, SL.1; ELP 3 ↔ W.2, W.3, SL.4; ELP 4 ↔ W.1, SL.4, L.6; ELP 5 ↔ W.7–9; ELP 6 ↔ RI.8, W.1b, SL.3; ELP 7 ↔ W.5, SL.6, L.6; ELP 8 ↔ RL/RI.4, L.4–5; ELP 9 ↔ W.4 and the c-clauses of W.1–3; ELP 10 ↔ L.1, L.3 (<a href="https://www.oregon.gov/ode/students-and-family/equity/EngLearners/Documents/ELPStandardsGrade9-12_ELAGrade9-10Final.pdf">Oregon ODE correspondences</a>). The map cites these at the 9–10 level; for juniors and seniors the same standard numbers apply at 11–12, but the 11–12 correspondence table itself was not retrieved. The ELPA21 blueprint tells you where the points are: <strong>Reading is 49% Standard 1 and 23% Standard 5; Listening is 53% Standard 1; Speaking is 88% Standard 3; Writing is 31% Standard 2, 25% Standard 10, 18% Standard 7</strong> (<a href="https://www.oregon.gov/ode/educator-resources/assessment/Documents/elpa21testspecsg9-12.pdf">ELPA21 Test Specs 9–12</a>). That weighting is why the mirror-task column below leans toward comprehension of multi-turn academic talk and short informational sets, "speak about a text or visual" rather than social conversation, peer-email responses, and sentence-level editing.</p>
+<p>The LSP and SET cadence gives the map its fixed assessment posts. Mississippi expects an LSP with "measurable goals for listening, speaking, reading, and writing," program minutes, classroom and testing accommodations, and ELP score history, developed by the SET at the start of the year and adjusted during it (<a href="https://content.schoolinsites.com/api/documents/181fd14309c646d09b4cc8c22ea2660d.pdf">MDE Parent and Guardian Guide 2020</a>); MDE's 2016 guide says the SET "should meet at least quarterly" (<a href="https://content.schoolinsites.com/api/documents/b552f0fe8ddf4b76b207e3adc2e9270f.pdf">MDE 2016 EL Guide</a>), and district plans operationalize that as a quarterly LSP evaluation (<a href="https://www.lowndes.k12.ms.us/departments/curriculum-and-instruction/files/documents/EL%20Plan%20Board%20Approved%208-9-19.pdf">Lowndes County SD EL Plan</a>). Screening runs within 30 calendar days for start-of-year enrollees and within 10 school days for mid-year arrivals, and the ELPA21 Dynamic Screener is open on DRC INSIGHT from July 20, 2026 through May 27, 2027 (<a href="https://www.lowndes.k12.ms.us/departments/curriculum-and-instruction/files/documents/EL%20Plan%20Board%20Approved%208-9-19.pdf">Lowndes EL Plan</a>; <a href="https://content.myconnectsuite.com/api/documents/d62ac0131dae475c882d5d2a1fa28850">MDE 2026–27 Testing Calendar</a>). One accommodation rule shapes classroom routine from Week 1: the 2017 MTAM allows a word-to-word native-language dictionary (#81) and reading directions only (#53) on ELPT but prohibits reading or paraphrasing test items (#55, #58), whereas English II permits read-aloud, extended time, and multiple sessions — and all accommodations must be "used during routine classroom instruction" to be defensible (<a href="https://content.schoolinsites.com/api/documents/7667bcbd3f704c4f9c1ebe3ea2c8aacf.pdf">MTAM Nov 2017, district copy</a>). A February 2026 MTAM revision exists but could not be opened, so treat the numbering as provisional.</p>
+</section>
+<section id="what-the-evidence-actually-supports-and-"><h2>What the evidence actually supports, and what is consensus or inference</h2>
+<p>The instructional core rests on four rated recommendations. The WWC practice guide gives <strong>strong evidence</strong> (six studies, five RCTs) to teaching a small set of academic words intensively over several days, anchored in a brief informational text and practiced across modalities, and <strong>strong evidence</strong> (five RCTs) to integrating oral and written English into content instruction with "daily opportunities for students to talk about content in pairs or small groups" (<a href="https://ies.ed.gov/ncee/WWC/Docs/PracticeGuide/wwc_ellwebinarslides_052114.pdf">IES/WWC</a>). It gives <strong>moderate evidence</strong> to small-group intervention of 3–5 students for ELs struggling in literacy, and only <strong>minimal evidence</strong> to structured writing with sentence starters and organizers (<a href="https://ies.ed.gov/ncee/WWC/Docs/PracticeGuide/wwc_ellwebinarslides_052114.pdf">IES/WWC</a>). Cole's meta-analysis of 44 studies found peer-mediated learning "effective for ELLs across every outcome type analyzed" (<a href="https://ir.vanderbilt.edu/items/b658f302-110e-41f6-9ad8-7e161aee92c3">Vanderbilt</a>), and Saunders, Goldenberg and Marcelletti rate as "relatively strong" only two of their fourteen ELD guidelines: that providing ELD at all helps (focused instruction yielding "more than five times the gains") and that interactive tasks work when the target form is essential and output is required (<a href="https://csaa.wested.org/wp-content/uploads/2019/11/EJ1014023.pdf">Saunders et al. 2013</a>). Those same authors rate grouping by proficiency and writing language objectives as "applicable but grounded in non-EL research," and a separate daily ELD block, explicit teaching of forms, a ~60/40 oral-to-literacy split, strategic L1 use, and prompt-based corrective feedback as "hypothesis" level (<a href="https://csaa.wested.org/wp-content/uploads/2019/11/EJ1014023.pdf">Saunders et al. 2013</a>). The honest frame for a principal is therefore: the vocabulary routine, the partner talk, and the small group are research-backed; the posted language objectives and the block itself are professionally sensible but unproven as such.</p>
+<p>Two caveats specific to high school matter. The WWC guide's scope is elementary and middle school, and the 2017 National Academies report states it "provides minimal specific practices guidance for high school ELs," calls high school a major research gap, and finds engagement measures "virtually absent" from intervention studies (<a href="https://www.nationalacademies.org/read/24677/chapter/10">NASEM ch. 8</a>). SIOP's flagship RCT does not meet WWC standards because of attrition and baseline non-equivalence (<a href="https://ies.ed.gov/ncee/wwc/study/75340">WWC study page</a>). What <em>is</em> documented for adolescents is sobering program data: in Montgomery County's secondary SLIFE program, only 30% of Level 1 starters reached Level 2 and 19.9% reached Level 3 in a year, staff rated existing curricula "too linguistically complex" and lacking phonics materials for older emergent readers, and 62% of program exits were "lost contact/disengaged" (<a href="https://ww2.montgomeryschoolsmd.org/departments/sharedaccountability/reports/2025/Secondary%20SLIFE%20Program%20Evaluation%20Report_Final.pdf">MCPS SLIFE evaluation 2025</a>). Browder's study of 165 high-school SLIFE found that perceived social distance predicted test achievement better than academic self-concept (<a href="https://llc.umbc.edu/files/2013/02/diss2014_Browder.pdf">Browder 2014</a>). Together these justify <span class="tag inf">INF</span> treating the heterogeneous partner structures as the engagement intervention, not just a language one, and setting a realistic one-year expectation of roughly one level of growth for Level 1 starters.</p>
+<p>The sequence of themes, grammar, and genres is practitioner consensus rather than experiment, but it is a strikingly consistent consensus. Lincoln-Way's 2024–25 Newcomer English (12 units × 4 weeks), Harford's ESOL I/II (7 units, 38 weeks), St Paul's Stage 5 Beginner, and the Ventures series all open with self/school/personal information, place food, health, community and weather in the first half, and back-load content-area language and goals/future (<a href="https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2025/Lw_210/a883706b-1343-4ff8-9469-47ddb3a06395/LWD210_EDLE_Newcomer_English_Scope___Sequence_.pdf?disposition=inline">Lincoln-Way 210</a>; <a href="https://hcps.org/departments/docs/InstructionalSupport/ESOL/ESOL-I-Curriculum-Map.pdf">HCPS ESOL I</a>; <a href="https://www.spic.nsw.edu.au/wp-content/uploads/2024/04/Stage-5-ESL-Beginner-Scope-Sequence.pdf">St Paul's</a>; <a href="https://www.cambridge.org/us/files/8215/3004/6992/Ventures3e_Basic_SandS.pdf">Ventures 3e Basic</a>). Their grammar order converges on <em>be</em> and pronouns → prepositions of place → plurals and there is/are → yes/no and Wh-questions → simple present with frequency adverbs → present continuous → prepositions of time → simple past (<em>be</em>, then regular/irregular) → <em>can</em> → <em>going to/will</em> → modals → comparatives → requests → clauses with and/but/because → sequence and procedural language (<a href="https://www.cambridge.org/us/files/4115/3004/6991/Ventures3e_L1_SandS.pdf">Ventures 3e Level 1</a>; <a href="https://www.cambridge.org/us/files/5115/3004/6988/Ventures3e_L2_SandS.pdf">Ventures 3e Level 2</a>; <a href="https://hcps.org/departments/docs/InstructionalSupport/ESOL/ESOL-II-Curriculum-Map.pdf">HCPS ESOL II</a>). Lincoln-Way does not reach past tense until Unit 7 of 12, roughly the 60% mark (<a href="https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2025/Lw_210/a883706b-1343-4ff8-9469-47ddb3a06395/LWD210_EDLE_Newcomer_English_Scope___Sequence_.pdf?disposition=inline">Lincoln-Way 210</a>); this map pulls it forward to Week 14 <span class="tag inf">INF</span> because the Progressing lane needs narrative past for the Storyboard task and because ELP 10 lists simple past at Level 1. Writing genres likewise move from forms and labels → sentences → descriptive and schedule paragraphs → past-tense narrative → informational/how-to/lab report → opinion and argument → research, in both district maps and the Edge anthology (<a href="https://ngl.cengage.com/assets/downloads/edgecc_pro0000000330/edge_bro_ovr_9781285783284.pdf">Edge Program Overview</a>; <a href="https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2025/Lw_210/a883706b-1343-4ff8-9469-47ddb3a06395/LWD210_EDLE_Newcomer_English_Scope___Sequence_.pdf?disposition=inline">Lincoln-Way 210</a>). Writing Next's meta-analysis ranks writing strategies, summarization, collaborative writing, product goals, and sentence combining as the most effective elements, though it does not disaggregate ELs (<a href="https://www.adlit.org/topics/writing/summary-writing-next">AdLit summary of Writing Next</a>); those five elements are built into the Thursday writing day.</p>
+</section>
+<section id="the-36-week-scope-and-sequence"><h2>The 36-week scope and sequence</h2>
+<p><strong>Calendar assumptions [INF, unverified for Laurel].</strong> Week 1 = August 3–7, 2026 and Week 11 = October 12–16, per the reader's count. Weeks are numbered continuously through the Thanksgiving week (treated as a short week) and skip winter break (Dec 21–Jan 1) and spring break (Mar 29–Apr 2), using the generic Mississippi 2026–27 pattern of an August 3 start, May 21 finish, and 180 days (<a href="https://us-school-calendar.com/mississippi">us-school-calendar.com Mississippi</a>). Under that count Week 36 ends April 30, and the three remaining calendar weeks (May 3–21) form a <strong>closeout tail</strong> that absorbs the English II window, final portfolios, LSP annual updates, and the slippage any real year produces. Laurel's published reference to "intersession schedules" means its quarter boundaries may differ (<a href="https://www.laurelschools.org/news/1801162/2025-2026-academic-calendar-now-available">Laurel SD 2025–26 calendar announcement</a>); shift rows, not content, once the district PDF is in hand. State dates are from the MDE 2026–27 calendar: ELPT March 1–April 16; MAAP EOC (English II) April 26–May 21; fall EOC retest Nov 30–Dec 18; ACT grade-11 events Feb 23, Mar 23, Apr 20; ACT WorkKeys Oct 19–Nov 13 and Mar 1–26; NAEP Science Jan 25–Mar 19 for selected schools (<a href="https://content.myconnectsuite.com/api/documents/d62ac0131dae475c882d5d2a1fa28850">MDE 2026–27 Testing Calendar</a>).</p>
+<h3 id="unit-architecture">Unit architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Unit (weeks)</th>
+<th>Theme and essential question</th>
+<th>Dominant ELP standards</th>
+<th>MS CCRS ELA anchors (9–10; same numbers at 11–12)</th>
+<th>Genre arc (E ▸ P)</th>
+<th>Vocabulary/morphology focus [PC/INF]</th>
+<th>Text-complexity target <span class="tag inf">INF</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 (Wk 1–5)</strong> Welcome: Who We Are</td>
+<td>Who are we, and how do we introduce ourselves in a new school?</td>
+<td>2, 3, 10 (+7)</td>
+<td>SL.1, W.3, L.1, L.2</td>
+<td>Forms, captions, sentences ▸ identity-text paragraph(s)</td>
+<td>Identical/near-identical cognates; "cognate detective" routine; survival/school nouns</td>
+<td>E 200–400L practice texts; P 600–800L; one grade-band anchor via read-aloud</td>
+</tr>
+<tr>
+<td><strong>2 (Wk 6–9)</strong> Our Days: School, Routines, Community</td>
+<td>How do we navigate our day, our school, and Laurel?</td>
+<td>1, 2, 3, 9, 10</td>
+<td>RI.7, SL.4, W.2, L.1</td>
+<td>Schedule paragraph, directions, rules poster ▸ informational piece for newcomer families</td>
+<td>Suffix pairs -ción/-tion, -dad/-ty; school/community nouns; prepositions</td>
+<td>Same bands; Short Informational Sets with tables/maps</td>
+</tr>
+<tr>
+<td><strong>3 (Wk 10–13)</strong> Food, Health &amp; Well-Being</td>
+<td>What keeps us healthy, and how do we explain and advise?</td>
+<td>1, 2, 4, 7, 10</td>
+<td>RI.1–2, W.1, W.2, SL.6</td>
+<td>Preference and advice paragraphs, how-to ▸ comparison paragraph, advice email, one-paragraph claim</td>
+<td>-oso/-ous, -cia/-nce, -mente/-ly; health cognates (nutrition, vitamin, symptom)</td>
+<td>E 300–500L; P 700–900L; procedures with visuals</td>
+</tr>
+<tr>
+<td><strong>4 (Wk 14–20)</strong> Then and Now: Telling Our Stories</td>
+<td>How do stories help us understand change? (shared hi-lo/YA literary text)</td>
+<td>1, 3, 9, 10</td>
+<td>RL.1–3, W.3, L.1, L.3</td>
+<td>Storyboard, recount, dialogue ▸ autobiographical narrative (3 paragraphs)</td>
+<td>Latin prefixes re-, in-/im-, dis-, pre-; irregular past verb families; story/character vocabulary</td>
+<td>Literary sets; novel with audio and Spanish edition; informational pairings</td>
+</tr>
+<tr>
+<td><strong>5 (Wk 21–24)</strong> How Things Work: Science, Environment &amp; Change</td>
+<td>What causes change in our world, and how do we report it?</td>
+<td>1, 3, 5, 8, 9</td>
+<td>RI.2–3, RI.7, W.2, W.7, L.4</td>
+<td>Weather report, labeled process, info poster ▸ compare/contrast, cause/effect, lab report, research paragraph</td>
+<td>-ment, -ist, -ism, -ive, -al, -ic; science cognates (~88% of key science words are cognates)</td>
+<td>E 400–600L; P 800–1000L; Extended Informational Sets with data</td>
+</tr>
+<tr>
+<td><strong>6 (Wk 25–28)</strong> Claims &amp; Evidence</td>
+<td>What makes an argument convincing?</td>
+<td>4, 6, 2, 7, 10</td>
+<td>W.1, RI.8, SL.3, L.6</td>
+<td>Opinion + reason, peer email ▸ claim paragraph → argumentative essay with counterclaim</td>
+<td>Persuasive/evaluative vocabulary; Greek/Latin roots dict, struct, port, graph</td>
+<td>Argument and Support Essay Sets; tiered U.S. historical document excerpt</td>
+</tr>
+<tr>
+<td><strong>7 (Wk 29–34, ELPT window)</strong> Voices: Discussion, Research &amp; Presentation</td>
+<td>What issue in our community deserves attention, and what should be done?</td>
+<td>2, 5, 6, 7, 9</td>
+<td>W.7–9, SL.1, SL.3–4</td>
+<td>Research questions, source cards, poster ▸ annotated sources, 3–4-paragraph report, presentation</td>
+<td>Reporting verbs (claims, states, argues); hedging; roots bio, geo, scrib</td>
+<td>E 500–700L; P 900–1100L; multi-source sets</td>
+</tr>
+<tr>
+<td><strong>8 (Wk 35–36 + closeout)</strong> Looking Forward: Goals, Work &amp; the Future</td>
+<td>Where am I going, and how will I get there?</td>
+<td>3, 4, 7, 10</td>
+<td>W.2, SL.4, SL.6, L.3</td>
+<td>Application form, skills paragraph, goal plan ▸ formal cover-letter email, explanatory essay</td>
+<td>Career/credential vocabulary; register contrasts</td>
+<td>Job ads, forms, graduation-pathway infographics</td>
+</tr>
+</tbody>
+</table>
+<p>The Lexile staircase and words-per-week figures are design targets, not research findings: MetaMetrics' matching rule is 100L below to 50L above a reader's measure for roughly 75% comprehension (<a href="https://metametricsinc.com/wp-content/uploads/2020/09/FAQs-Lexile-Measures-and-Learning.pdf">MetaMetrics FAQs</a>), but Shanahan argues that grade-level text "punctuated with somewhat easier ones," with explicit vocabulary, syntax and background support, produces larger gains than leveled text for everyone except true beginning readers (<a href="https://www.educationnext.org/right-reading-level-or-right-reading-challenge/">Education Next</a>). Every unit therefore keeps one grade-band anchor text for all lanes, accessed by read-aloud, audio, chunking, and tiered versions.</p>
+<h3 id="week-by-week-map">Week-by-week map</h3>
+<p>Column key: <strong>E</strong> = Emerging lane (ELPA21 L1–2); <strong>N</strong> = Newcomer sub-lane notes (Level 1, including possible SLIFE); <strong>P</strong> = Progressing lane (L3–4); <strong>C</strong> = Challenge sub-lane notes (high L4/near exit). ELP = ELP standards emphasized; CCRS codes are the 9–10 correspondences. "Mirror" names the ELPA21 9–12 task family from the test blueprint practiced that week. Grammar targets follow the ELP Standard 10 level descriptors and the consensus district/Ventures order.</p>
+<table id="weekmap">
+<thead>
+<tr>
+<th>Wk (dates)</th>
+<th>Unit · theme/topic</th>
+<th>Language function(s)</th>
+<th>Target grammar/syntax: E ▸ P</th>
+<th>ELP · CCRS</th>
+<th>Text type</th>
+<th>Writing product: E ▸ P</th>
+<th>ELPA21 mirror task</th>
+<th>Calendar / assessment flag · lane notes</th>
+</tr>
+</thead>
+<tbody>
+<tr data-unit="1">
+<td><strong>1</strong> (Aug 3–7)</td>
+<td>U1 · Names, greetings, classroom language, "how to school," Chromebook onboarding</td>
+<td>Greet, introduce self, ask/answer yes-no questions</td>
+<td>E: <em>be</em> (am/is/are), subject pronouns, yes/no with <em>be</em> ▸ P: question formation review, possessive <em>'s</em>, diagnostic writing</td>
+<td>2, 10 · SL.1, L.1</td>
+<td>Roster, bell schedule, picture dictionary, classroom labels</td>
+<td>E: ID form + name card + 3 "I am…" sentences ▸ P: one-paragraph introduction letter</td>
+<td>Speaking: Compare Pictures (two classroom scenes), recorded in Flashlight360 as baseline</td>
+<td>Screener window open; 30-day screening for new enrollees; BOY progress report home with spring 2026 ELPT; baseline mini-ELPA begins. N: alphabet/number diagnostic, survival notebook. C: diagnostic essay</td>
+</tr>
+<tr data-unit="1">
+<td><strong>2</strong> (Aug 10–14)</td>
+<td>U1 · Personal information, family</td>
+<td>Describe people; ask Wh-questions</td>
+<td>E: possessive adjectives, <em>have/has</em>, who/what/where ▸ P: adjective order, there is/are, 3rd-person <em>-s</em></td>
+<td>2, 3, 8 · SL.1, W.3, L.4</td>
+<td>Family photos with captions; short poem as model ("Where I'm From" style)</td>
+<td>E: labeled family tree + caption sentences ▸ P: identity poem/paragraph (bilingual draft allowed)</td>
+<td>Listening: Short Conversation (two students meeting); Reading: Short Paragraphs</td>
+<td>Baseline continues (Listening, Reading). N: phonics diagnostic (transferring vs. non-transferring sounds)</td>
+</tr>
+<tr data-unit="1">
+<td><strong>3</strong> (Aug 17–21)</td>
+<td>U1 · Our languages, our places: home town and Laurel</td>
+<td>Describe places; basic compare</td>
+<td>E: prepositions of place, this/that/these/those, plural nouns ▸ P: present simple vs. present progressive, adverbs of frequency</td>
+<td>3, 9, 10 · W.2, RI.7, L.1</td>
+<td>Maps; infographic on Mississippi and home countries</td>
+<td>E: 5-sentence place description ("In my town there is/are…") ▸ P: descriptive paragraph comparing home town and Laurel (topic sentence, 3 details, closing)</td>
+<td>Writing: Writing Questions (3 questions about a school announcement)</td>
+<td>Baseline closes (Writing); LSP goals (scale-score targets) entered in Ellevation</td>
+</tr>
+<tr data-unit="1">
+<td><strong>4</strong> (Aug 24–28)</td>
+<td>U1 · "Who I Am" identity text</td>
+<td>Narrate briefly; present information</td>
+<td>E: present simple affirmative/negative (do/does/don't), <em>like/want + to</em> ▸ P: compound sentences with and/but/so; sentence combining</td>
+<td>3, 7, 9 · W.3, W.4, L.3</td>
+<td>Student-written bilingual identity texts as mentor texts</td>
+<td>E: illustrated "All About Me" page in sentences ▸ P: two-paragraph identity text</td>
+<td>Speaking: Language Arts Presentation (3 questions about a classmate's text)</td>
+<td>Precision partners assigned by alternate ranking; Preview-View-Review routine introduced</td>
+</tr>
+<tr data-unit="1">
+<td><strong>5</strong> (Aug 31–Sep 4)</td>
+<td>U1 · Culminating gallery/presentation</td>
+<td>Present; respond to audience questions; edit</td>
+<td>E: review <em>be/have/do</em> questions; capitalization and end punctuation ▸ P: subject-verb agreement editing</td>
+<td>2, 7, 10 · SL.4, L.1, L.2</td>
+<td>Student products; peer-feedback note model</td>
+<td>E: edited final + presentation script ▸ P: final identity text + feedback note to a peer</td>
+<td>Writing: Discrete Editing; Speaking: recorded presentation; Writing: Respond to Peer Email (feedback)</td>
+<td><strong>Unit 1 check (4 domains)</strong></td>
+</tr>
+<tr data-unit="2">
+<td><strong>6</strong> (Sep 7–11)</td>
+<td>U2 · School day, schedules, time</td>
+<td>Tell time; describe routines; sequence</td>
+<td>E: prepositions of time (at/on/in), simple present routines, frequency adverbs ▸ P: time clauses (when/before/after), habit vs. now</td>
+<td>3, 9, 10 · W.2, L.1</td>
+<td>Bell schedule, timetable, school map (Short Informational Set with table)</td>
+<td>E: daily schedule paragraph with first/then/next ▸ P: routine paragraph with time clauses, compared to a partner's</td>
+<td>Listening: Listen for Information (fill a schedule from audio)</td>
+<td>Labor Day Sep 7 (4-day week)</td>
+</tr>
+<tr data-unit="2">
+<td><strong>7</strong> (Sep 14–18)</td>
+<td>U2 · Around Laurel: places, directions, community helpers</td>
+<td>Give/follow directions; request help</td>
+<td>E: imperatives, prepositions of movement, <em>can/could</em> requests ▸ P: modals of permission/request, indirect questions ("Can you tell me where…")</td>
+<td>2, 7, 9 · SL.6, W.6</td>
+<td>Maps, signs, bus schedule, community flyer</td>
+<td>E: 4–6 imperative-sentence directions ▸ P: email requesting information, formal vs. informal register</td>
+<td>Speaking: Observe and Report (route/process from a video with sequence words); Listening: Short Conversation</td>
+<td>N: TPR and language-experience approach for directions</td>
+</tr>
+<tr data-unit="2">
+<td><strong>8</strong> (Sep 21–25)</td>
+<td>U2 · School success: classes, rules, asking for help</td>
+<td>Explain rules; express need; summarize main idea</td>
+<td>E: have to/must/can't; there is/are review ▸ P: should/ought to; <em>because</em> clauses; "The rule says that…"</td>
+<td>1, 2, 6 · RI.2, RI.8, SL.1</td>
+<td>Student-handbook excerpt (tiered); Short Informational Set</td>
+<td>E: rules poster with modals ▸ P: summary paragraph of a handbook section + one-reason opinion</td>
+<td>Reading: Short Informational Set; Writing: Respond to Peer Email (which club to join)</td>
+<td>—</td>
+</tr>
+<tr data-unit="2">
+<td><strong>9</strong> (Sep 28–Oct 2)</td>
+<td>U2 · Culminating "A Day at Laurel High" photo essay + Benchmark 1</td>
+<td>Present information; respond</td>
+<td>Review; discrete editing</td>
+<td>2, 3, 9, 10 · W.2, SL.4</td>
+<td>Student photo essays</td>
+<td>E: captioned photo essay, 5–8 sentences ▸ P: multi-paragraph informational piece for a newcomer family</td>
+<td><strong>Benchmark 1: four-domain mini-ELPA</strong></td>
+<td><strong>End Q1 · SET/LSP review #1 · progress note home</strong></td>
+</tr>
+<tr data-unit="3">
+<td><strong>10</strong> (Oct 5–9)</td>
+<td>U3 · Food and culture; preferences</td>
+<td>Express preference; describe; order</td>
+<td>E: like/love/don't like + noun/-ing; count/non-count with some/any/much/many ▸ P: quantifiers, comparatives (more/less…than), <em>would rather</em></td>
+<td>2, 3, 8 · W.2, L.4</td>
+<td>Menus, nutrition labels, short informational text on food traditions</td>
+<td>E: favorite-meal paragraph ▸ P: paragraph comparing two food traditions</td>
+<td>Speaking: Compare Pictures (two meals or markets)</td>
+<td>Cognate sort: nutrition, vitamin, cultural</td>
+</tr>
+<tr data-unit="3">
+<td><strong>11</strong> (Oct 12–16)</td>
+<td>U3 · Health, body, feelings, the clinic</td>
+<td>Describe symptoms; give advice</td>
+<td>E: <em>have</em> + symptom, <em>feel</em> + adj, should/shouldn't ▸ P: should/had better; zero and first conditional (if…, you should…)</td>
+<td>2, 4, 7 · W.1, SL.6</td>
+<td>Medicine label, clinic form, health infographic</td>
+<td>E: health-advice poster in <em>should</em> sentences ▸ P: advice email to a friend (claim + reasons)</td>
+<td>Listening: Academic Lecture (health talk with visual); Writing: Respond to Peer Email</td>
+<td>Worked walkthrough example for this week is in the block section below</td>
+</tr>
+<tr data-unit="3">
+<td><strong>12</strong> (Oct 19–23)</td>
+<td>U3 · How-to: recipes and procedures</td>
+<td>Sequence a process; explain</td>
+<td>E: imperatives + first/next/then/finally; measures ▸ P: time/condition clauses (after you…, until…); C: procedural passive ("is mixed")</td>
+<td>3, 9 · W.2, L.1</td>
+<td>Recipe; procedural text (Extended Informational Set: procedures)</td>
+<td>E: 6-step recipe/how-to ▸ P: procedural text + explanation of why steps matter</td>
+<td>Speaking: Observe and Report (cooking/science demo); Reading: Extended Informational Set</td>
+<td>ACT WorkKeys fall window opens Oct 19 (gr. 11, if applicable)</td>
+</tr>
+<tr data-unit="3">
+<td><strong>13</strong> (Oct 26–30)</td>
+<td>U3 · Well-being and choices: is X healthy?</td>
+<td>State opinion with reason; identify an author's point</td>
+<td>E: "I think… because…" ▸ P: claim + two reasons + concluding sentence; <em>although</em></td>
+<td>4, 6 · W.1, RI.8</td>
+<td>Two short opinion pieces (tiered)</td>
+<td>E: opinion + one reason (ELP 4 L1–2) ▸ P: one-paragraph claim (ELP 4 L3)</td>
+<td>Writing: Construct a Claim (short form)</td>
+<td><strong>Unit 3 check (4 domains)</strong></td>
+</tr>
+<tr data-unit="4">
+<td><strong>14</strong> (Nov 2–6)</td>
+<td>U4 · Launch shared literary text (hi-lo/YA novel or story collection; audio + Spanish edition)</td>
+<td>Recount; describe characters and setting</td>
+<td>E: was/were, there was/were, past time expressions ▸ P: simple past regular/irregular review; past progressive vs. simple past</td>
+<td>1, 3, 10 · RL.1, RL.3, L.1</td>
+<td>Novel ch. 1–2; Short Literary Set</td>
+<td>E: 5-sentence recount "Yesterday I…" ▸ P: character description paragraph with text evidence</td>
+<td>Reading: Short Literary Set; Speaking: Language Arts Presentation (3 questions on the chapter)</td>
+<td>Novel choice is a judgment call (see gaps): hi-lo/YA, not a primary-grade book</td>
+</tr>
+<tr data-unit="4">
+<td><strong>15</strong> (Nov 9–13)</td>
+<td>U4 · Story structure: beginning, middle, end</td>
+<td>Sequence events; narrate</td>
+<td>E: regular past (<em>-ed</em> as /t/ /d/ /ɪd/), <em>ago/last</em> ▸ P: past progressive with when/while; transitions (after that, meanwhile)</td>
+<td>1, 9 · RL.2, W.3c</td>
+<td>Novel; storyboard image sets</td>
+<td>E: Storyboard narrative, 4 frames, past tense, word bank ▸ P: narrative paragraph retelling a chapter with transitions</td>
+<td>Writing: Storyboard</td>
+<td>N: contrastive phonics continues (short vowels, /v/ /z/ /j/)</td>
+</tr>
+<tr data-unit="4">
+<td><strong>16</strong> (Nov 16–20)</td>
+<td>U4 · Characters, motivation, dialogue; mentor autobiographical narrative</td>
+<td>Narrate; explain motivation</td>
+<td>E: 20 high-frequency irregular pasts; <em>didn't</em> + base ▸ P: past perfect for "before" relationships (ELP 10 L4); quoted dialogue punctuation</td>
+<td>1, 2, 3 · RL.3, W.3b, L.2</td>
+<td>Novel; short autobiographical narrative (mentor)</td>
+<td>E: dialogue + summary sentences ▸ P: autobiographical narrative draft 1 (arrival/change story)</td>
+<td>Listening: Short Conversation; Speaking: Compare Pictures (then/now)</td>
+<td>—</td>
+</tr>
+<tr data-unit="4">
+<td><strong>17</strong> (Nov 23–27)</td>
+<td>U4 · Family stories: interview a family member (bilingual)</td>
+<td>Ask questions; retell</td>
+<td>E: past Wh-questions (Did you…? Where did…?) ▸ P: reported speech ("She said that she…")</td>
+<td>2, 5 · SL.1, W.7</td>
+<td>Interview transcript model</td>
+<td>E: 3 interview questions + answers ▸ P: interview notes + question set</td>
+<td>Writing: Writing Questions</td>
+<td>Thanksgiving Nov 25–27 (2-day week; many MS districts close the full week — verify). Low-stakes</td>
+</tr>
+<tr data-unit="4">
+<td><strong>18</strong> (Nov 30–Dec 4)</td>
+<td>U4 · Theme and central idea; "then and now"</td>
+<td>Identify central idea; compare</td>
+<td>E: <em>used to</em> (intro), comparatives (older/younger) ▸ P: <em>used to</em> vs. <em>would</em>; comparison transitions (whereas, unlike)</td>
+<td>1, 9 · RL.2, W.2c</td>
+<td>Novel; paired informational text (migration/history link)</td>
+<td>E: Then/Now T-chart sentences ▸ P: central-idea paragraph with two text details</td>
+<td>Reading: Extended Literary Set</td>
+<td>Fall EOC retest window Nov 30–Dec 18 (retesters only)</td>
+</tr>
+<tr data-unit="4">
+<td><strong>19</strong> (Dec 7–11)</td>
+<td>U4 · Revise, peer-review, publish narratives</td>
+<td>Edit; give feedback</td>
+<td>E: past-tense and punctuation editing ▸ P: sentence combining (appositives, introductory participial phrases)</td>
+<td>7, 9, 10 · W.5, L.1, L.3</td>
+<td>Student narratives</td>
+<td>E: final narrative, 8–10 sentences ▸ P: final autobiographical narrative, 3 paragraphs</td>
+<td>Writing: Discrete Editing; Speaking: recorded narrative retell (Flashlight360)</td>
+<td>—</td>
+</tr>
+<tr data-unit="4">
+<td><strong>20</strong> (Dec 14–18)</td>
+<td>U4 · Semester showcase + Benchmark 2</td>
+<td>Present; reflect</td>
+<td>Review</td>
+<td>2, 3 · SL.4</td>
+<td>Student products</td>
+<td>Portfolio selection + can-do self-assessment</td>
+<td><strong>Benchmark 2: four-domain semester mini-ELPA</strong></td>
+<td><strong>End Q2/semester · SET/LSP review #2 · progress note home · winter break Dec 21–Jan 1</strong></td>
+</tr>
+<tr data-unit="5">
+<td><strong>21</strong> (Jan 4–8)</td>
+<td>U5 · Weather, seasons, climate: Mississippi vs. home countries; re-entry routines</td>
+<td>Describe; compare; predict</td>
+<td>E: comparatives/superlatives, <em>it is</em> + adj, <em>will</em> for prediction ▸ P: present perfect ("has changed since…", ELP 10 L3); <em>as…as</em></td>
+<td>3, 9, 10 · RI.7, W.2, L.1</td>
+<td>Weather reports; charts (Short Informational Set with graphs)</td>
+<td>E: weather-report paragraph ▸ P: compare/contrast paragraph with data</td>
+<td>Listening: Listen for Information (chart); Speaking: Analyze a Visual (summarize a graph)</td>
+<td>—</td>
+</tr>
+<tr data-unit="5">
+<td><strong>22</strong> (Jan 11–15)</td>
+<td>U5 · Cause and effect in the natural world (storms, erosion, ecosystems)</td>
+<td>Explain cause/effect</td>
+<td>E: because/so; "X causes Y" ▸ P: as a result, due to, therefore, <em>leads to</em>; expanded noun phrases</td>
+<td>1, 3, 9 · RI.3, W.2, W.2c</td>
+<td>Extended Informational Set (data + student report)</td>
+<td>E: cause→effect sentences + diagram labels ▸ P: cause/effect paragraph from the text set</td>
+<td>Reading: Extended Informational Set; Speaking: Observe and Report (science demo)</td>
+<td>—</td>
+</tr>
+<tr data-unit="5">
+<td><strong>23</strong> (Jan 18–22)</td>
+<td>U5 · Science process: observe, hypothesize, report</td>
+<td>Describe a process; report findings</td>
+<td>E: present simple for facts + sequence ▸ P: precise verbs; C: passive (is formed, was observed — ELP 10 L5)</td>
+<td>3, 5, 10 · W.2, W.7, L.1</td>
+<td>Lab procedure; infographic</td>
+<td>E: labeled diagram + 5-step process ▸ P: short lab/observation report (purpose, steps, result)</td>
+<td>Speaking: Observe and Report; Listening: Academic Lecture</td>
+<td>MLK Day Jan 18 (4-day week)</td>
+</tr>
+<tr data-unit="5">
+<td><strong>24</strong> (Jan 25–29)</td>
+<td>U5 · Human impact and solutions; mini-research from two provided sources</td>
+<td>Gather, summarize, cite</td>
+<td>E: "According to…" ▸ P: present perfect for change over time; relative clauses (which/that)</td>
+<td>5, 8 · W.7–8, L.4</td>
+<td>Two provided sources (tiered); video</td>
+<td>E: info poster with 3 facts + source ▸ P: research paragraph with source list</td>
+<td>Reading: Short Informational Set</td>
+<td><strong>Unit 5 check</strong> · NAEP Science window opens (selected schools) · morphology: -ción/-tion, -ment</td>
+</tr>
+<tr data-unit="6">
+<td><strong>25</strong> (Feb 1–5)</td>
+<td>U6 · What makes a good argument? School/community issues</td>
+<td>State a claim; give reasons</td>
+<td>E: I think/believe + because; <em>should</em> ▸ P: claim + logically ordered reasons (first/second/finally); modals of certainty (must/might)</td>
+<td>4, 6 · W.1, RI.8</td>
+<td>Argument and Support Essay Set (student-written argument as model)</td>
+<td>E: peer email with opinion + one reason ▸ P: Construct a Claim, one paragraph</td>
+<td>Writing: Respond to Peer Email; Reading: Argument and Support Essay Set</td>
+<td>—</td>
+</tr>
+<tr data-unit="6">
+<td><strong>26</strong> (Feb 8–12)</td>
+<td>U6 · Analyzing a speaker's argument: academic debate</td>
+<td>Identify argument and reasons; agree/disagree</td>
+<td>E: agree/disagree frames ▸ P: concession (although, even though); counterclaim ("Some people say…; however…")</td>
+<td>6, 2 · SL.3, RI.8</td>
+<td>Debate audio/video; short persuasive-speech excerpt (tiered)</td>
+<td>E: "The speaker says… One reason is…" ▸ P: paragraph analyzing reasons and evidence sufficiency</td>
+<td>Listening: Academic Debate; Speaking: Analyze a Visual and a Claim</td>
+<td>—</td>
+</tr>
+<tr data-unit="6">
+<td><strong>27</strong> (Feb 15–19)</td>
+<td>U6 · Building the argumentative essay; rhetoric in a tiered U.S. historical document excerpt</td>
+<td>Argue; adopt formal style</td>
+<td>E: because/but/so + modals ▸ P: second conditional (if…would); formal style (ELP 7 L4)</td>
+<td>4, 6, 7 · W.1, RI.9, SL.6</td>
+<td>Historical document excerpt (tiered); essay models</td>
+<td>E: two-paragraph opinion with frames ▸ P: full argumentative essay draft (claim, two reasons with evidence, counterclaim, conclusion)</td>
+<td>Writing: Construct a Claim (extended)</td>
+<td>Presidents' Day Feb 15 (if observed) · DRC practice-test segments begin</td>
+</tr>
+<tr data-unit="6">
+<td><strong>28</strong> (Feb 22–26)</td>
+<td>U6 · Revise, edit, publish; full ELPT dress rehearsal</td>
+<td>Edit; self-assess</td>
+<td>Discrete editing: pronouns, verbs, prepositions</td>
+<td>10, 7 · L.1, L.2</td>
+<td>Student essays</td>
+<td>Final argument (E: 2 paragraphs ▸ P: essay)</td>
+<td><strong>Benchmark 3: four-domain mock in DRC practice-test format with headset/recording routines</strong></td>
+<td>ACT (gr. 11) Feb 23 · <strong>Unit 6 check = Benchmark 3</strong></td>
+</tr>
+<tr data-unit="7">
+<td><strong>29</strong> (Mar 1–5)</td>
+<td>U7 · Launch community-issue inquiry: choose topic, write questions</td>
+<td>Ask research questions; plan</td>
+<td>E: Wh-question review ▸ P: indirect questions and noun clauses ("I want to know whether…")</td>
+<td>5, 2 · W.7, SL.1</td>
+<td>Provided source bank (tiered); video</td>
+<td>E: 3 research questions + KWL ▸ P: research-proposal paragraph</td>
+<td>Writing: Writing Questions</td>
+<td><strong>ELPT window opens Mar 1</strong> · ACT WorkKeys spring opens · low-prep station design begins</td>
+</tr>
+<tr data-unit="7">
+<td><strong>30</strong> (Mar 8–12)</td>
+<td>U7 · Gathering and evaluating sources</td>
+<td>Evaluate reliability; report what sources say</td>
+<td>E: "This source is from…; it is reliable because…" ▸ P: reporting verbs (claims, states, argues); hedged evaluation (may be biased)</td>
+<td>5, 6, 8 · W.8, RI.8</td>
+<td>2–3 sources per topic</td>
+<td>E: source cards ▸ P: annotated source list</td>
+<td>Reading: Extended Informational Set</td>
+<td><strong>End Q3 (~Mar 12) · SET/LSP review #3</strong> · ELPT sessions by domain</td>
+</tr>
+<tr data-unit="7">
+<td><strong>31</strong> (Mar 15–19)</td>
+<td>U7 · Structured academic discussion / seminar on project topics</td>
+<td>Build on ideas; clarify; paraphrase</td>
+<td>E: discussion frames (I agree with ___ because…) ▸ P: elaboration and hedging (It seems that…; In other words…)</td>
+<td>2, 6 · SL.1, SL.3</td>
+<td>Short shared article</td>
+<td>E: discussion-note sentences ▸ P: summary of key points from discussion</td>
+<td>Listening: Interactive Student Presentation (peer-recorded); Speaking: Language Arts Presentation</td>
+<td>ELPT sessions continue</td>
+</tr>
+<tr data-unit="7">
+<td><strong>32</strong> (Mar 22–26)</td>
+<td>U7 · Drafting the report/presentation</td>
+<td>Organize information; integrate sources</td>
+<td>E: "According to…" + simple sentences ▸ P: quotation/paraphrase integration; section-linking transitions (ELP 9 L4)</td>
+<td>5, 9 · W.7–9, W.4</td>
+<td>Student drafts</td>
+<td>E: 3-slide/poster with labeled visuals + 5 sentences ▸ P: organized 3–4-paragraph report with citations</td>
+<td>Writing: Construct a Claim (recommendation)</td>
+<td>ACT Mar 23 · <strong>spring break Mar 29–Apr 2 follows</strong></td>
+</tr>
+<tr data-unit="7">
+<td><strong>33</strong> (Apr 5–9)</td>
+<td>U7 · Presenting and responding</td>
+<td>Present; respond to audience questions</td>
+<td>E: present/past in presentation frames ▸ P: formal presentation register; rhetorical questions</td>
+<td>2, 3, 7 · SL.4, SL.6</td>
+<td>Student presentations</td>
+<td>E: presentation script ▸ P: speaker notes + audience questions</td>
+<td>Speaking: Interactive Student Presentation (recorded); Listening: peer presentation questions</td>
+<td>ELPT sessions resume for any students not yet tested</td>
+</tr>
+<tr data-unit="7">
+<td><strong>34</strong> (Apr 12–16)</td>
+<td>U7 · Reflection and critique of peers' arguments</td>
+<td>Evaluate; give feedback</td>
+<td>E: "I liked… because…" ▸ P: evaluative language (effective, convincing, insufficient evidence)</td>
+<td>6, 7 · SL.3, W.5</td>
+<td>Peer products</td>
+<td>E: peer-feedback email ▸ P: critique paragraph</td>
+<td>Writing: Respond to Peer Email</td>
+<td><strong>ELPT window closes Apr 16</strong> · <strong>Unit 7 check (portfolio-based)</strong></td>
+</tr>
+<tr data-unit="8">
+<td><strong>35</strong> (Apr 19–23)</td>
+<td>U8 · Careers, jobs, skills; job ads; interviews</td>
+<td>Describe abilities and goals; shift register</td>
+<td>E: can/can't, want to/would like to, <em>be going to</em> ▸ P: will / going to / present continuous for plans; <em>would</em> for hypotheticals; C: second conditional</td>
+<td>3, 7, 10 · W.2, SL.6, L.3</td>
+<td>Job ads, application forms, career infographic</td>
+<td>E: skills paragraph + application form ▸ P: cover-letter-style formal email</td>
+<td>Speaking: Compare Pictures (two workplaces); Listening: Short Conversation (interview)</td>
+<td>ACT Apr 20 · ELPT make-ups per OSA guidance</td>
+</tr>
+<tr data-unit="8">
+<td><strong>36</strong> (Apr 26–30)</td>
+<td>U8 · Goal plan: high school → graduation → beyond (credits, English II, EOCs)</td>
+<td>Explain plans and reasons</td>
+<td>E: <em>going to</em> + because ▸ P: future time clauses (After I graduate, I will…); <em>in order to</em></td>
+<td>4, 9 · W.1, W.4</td>
+<td>Graduation-pathway infographic; counselor materials</td>
+<td>E: 5-step goal plan ▸ P: "My plan" explanatory essay</td>
+<td>Writing: Construct a Claim (the best path for me)</td>
+<td><strong>MAAP English II window opens Apr 26</strong> (gr. 10) · accommodation rehearsal (dictionary, extended time, multiple sessions)</td>
+</tr>
+<tr data-unit="8">
+<td><strong>Closeout</strong> (May 3–21)</td>
+<td>U8 · English II support; future-self presentations; portfolio and exit evidence</td>
+<td>Present; reflect; self-assess</td>
+<td>Lane-specific review driven by Benchmark 4 gaps</td>
+<td>3, 7 · SL.4</td>
+<td>Portfolios</td>
+<td>Final portfolio + can-do self-assessment; LSP annual update evidence</td>
+<td><strong>Benchmark 4: end-of-year four-domain mini-ELPA</strong></td>
+<td>English II through May 21 · <strong>SET #4 / LSP annual update</strong> · screener closes May 27 · buffer for intersessions and slippage</td>
+</tr>
+</tbody>
+</table>
+<p>Three design choices in this table are the report's own inferences and deserve explanation. First, Unit 4 spans seven weeks because the narrative/novel work tolerates the holiday-fragmented November–December stretch better than a new informational unit would, and because the Storyboard writing task and Short/Extended Literary reading sets together carry substantial blueprint weight (<a href="https://www.oregon.gov/ode/educator-resources/assessment/Documents/elpa21testspecsg9-12.pdf">ELPA21 Test Specs 9–12</a>). Second, Unit 7 is deliberately a project with low daily prep and station-friendly structure so that instruction survives the six-week ELPT window during which students leave the room in domain sessions; the ELPT is untimed with an estimated 155 minutes for grades 9–12, so schools stage it across days (<a href="https://nemtss.unl.edu/wp-content/uploads/2022/06/20-English-Language-Proficiency-Assessment-for-the-21st-Century.pdf">NeMTSS ELPA21 overview</a>). Third, argument (Unit 6) lands in February, immediately before the test, because Construct a Claim, Respond to Peer Email, Academic Debate, and the Argument and Support Essay Set are the task families the Progressing lane most needs to have fresh and because ELP 4 and 6 at Levels 3–4 ("sufficient reasons," "analyze the reasoning and use of rhetoric") are the descriptors that separate Level 3 from Level 4 writing (<a href="https://www.oregon.gov/ode/students-and-family/equity/EngLearners/Documents/ELPStandardsGrade9-12.pdf">Oregon ODE, ELP Standards 9–12</a>).</p>
+</section>
+<section id="the-literacy-strand-contrastive-phonics-"><h2>The literacy strand: contrastive phonics for the few, cognates and morphology for all</h2>
+<p>The strand runs in parallel with the theme calendar rather than pausing it, which is how every publisher handles it (Edge Fundamentals' "Inside Phonics," Bridges' separate Foundational Language and Literacy course, NGL's Stand Out Literacy Foundations) (<a href="https://ngl.cengage.com/assets/downloads/edgecc_pro0000000330/edge_bro_ovr_9781285783284.pdf">Edge Program Overview</a>; <a href="https://www.nysed.gov/sites/default/files/programs/bilingual-ed/topic-brief-sife-a.pdf">NYSED SIFE brief</a>; <a href="https://cloud.em.cengage.com/K12newcomer">NGL K12 Newcomer</a>). Its first job is triage <span class="tag pc">PC</span>: a Week 1–2 diagnostic that separates Spanish-literate newcomers, who transfer decoding concepts and need a short contrastive course, from non-literate adolescents, who need the full foundational sequence through age-appropriate materials. Cárdenas-Hagan's guidance is to teach phonological awareness explicitly but contrastively, "identifying sounds that transfer across language," and to keep decoding integrated with meaning (<a href="https://www.colorincolorado.org/node/70597">Colorín Colorado</a>). The non-transferring inventory for Spanish speakers is specific: short /ă/ /ĭ/ /ŭ/, schwa, r-controlled vowels, vowel teams /oo/ /aw/, consonants /v/ /z/ /j/ /r/, digraphs sh/ng/th/wh/zh, and s-blends (<a href="https://www.colorincolorado.org/sites/default/files/English-Sounds-Challenging-Spanish-Speakers.pdf">Colorín Colorado handout</a>); Spanish has five vowel sounds against roughly twenty in English, and each Spanish vowel letter maps to one sound, so the explicit message to literate newcomers is that the letters are the same but "reading in English is more complicated," with minimal pairs such as <em>bit/beat</em> taught with visuals and meaning (<a href="https://readinguniverse.org/skill-explainer/phonics-patterns/short-vowels-skill-explainer/english-learners-short-vowels">Reading Universe</a>). The ordering of that course in the map's Newcomer small group — transferring letters as a quick check (Wk 1–2), short vowels (Wk 3–6), /v/ /z/ /j/ and English /r/ (Wk 7–10), digraphs (Wk 11–13), s-blends and the epenthetic "e-school" habit (Wk 14–16), r-controlled vowels and vowel teams (Wk 17–24), schwa and multisyllabic decoding through cognate suffixes (Wk 25–36) — is the report's synthesis <span class="tag inf">INF</span>; no source gives an order, and no peer-reviewed study tests a contrastive sequence with high-school newcomers. For the SLIFE minority, the full sequence runs in the same daily slot with hi-lo decodables, consistent with WWC's moderate-evidence small-group recommendation and CAL's finding that literacy background is "the most important factor" in newcomer program design (<a href="https://cal.org/helping-newcomer-students-executive-summary">CAL newcomer summary</a>). Shanahan's caution bounds the strand: older struggling readers are generally not beginning readers, and those below the "decoding threshold" struggle with multisyllabic and morphologically complex words they will never meet in below-grade texts (<a href="https://www.educationnext.org/right-reading-level-or-right-reading-challenge/">Education Next</a>).</p>
+<p>Cognates and morphology are the strand's engine for everyone, and here the evidence is better. In a study of 90 Spanish-speaking ELs, <strong>Spanish derivational awareness predicted English cognate vocabulary (explaining 13% of variance) but not noncognate vocabulary</strong>, and fed English reading comprehension indirectly; the authors recommend teaching morphological and cognate strategies together and note derivational awareness "can be assessed in either English or Spanish" — a usable intake screen for L1 literacy (<a href="https://alliedhealth.ceconnection.com/files/CrossLinguisticTransferofMorphologicalAwarenessinSpanishSpeakingEnglishLanguageLearners-1360187444342.pdf">Cross-Linguistic Transfer PDF</a>). Carlo et al.'s intervention teaching context, morphology, polysemy, and cognate strategies produced gains for ELs "as large as for the English-only speakers" (<a href="https://www.colorincolorado.org/research/closing-gap-addressing-vocabulary-needs-english-language-learners-bilingual-and-mainstream">Colorín Colorado summary of Carlo et al.</a>), and CAL's CREATE secondary science work found about 88% of key science words were Spanish cognates and taught roughly five words per lesson with bilingual definitions (<a href="https://www.cal.org/create/pdfs/create-briefs-collection.pdf">CAL CREATE briefs</a>). The suffix correspondences to teach first are documented (-ción/-tion, -tad/-dad/-ty, -ez/-ity or -ness, -oso/-ous, -cio/-cia/-nce, -mento/-ment), as are identical cognates (<em>hospital, doctor, ideal</em>) and false friends (<em>pariente</em> = relative) (<a href="https://wisc.pb.unizin.org/dcsspanishreadingandtranslation/chapter/1-5-cognates/">UW Spanish Reading OER</a>); the map's unit-by-unit progression from identical cognates to suffix pairs to Latin prefixes to Greek/Latin roots is this report's ordering <span class="tag inf">INF</span>. Weekly vocabulary load follows WWC's "five to eight words from the text" taught across several days through writing, speaking, and listening (<a href="https://www.education.ne.gov/wp-content/uploads/2019/03/Teaching-Academic-Content-and-Literacy-Recommendation-1.pdf">Nebraska DoE summary of WWC Rec. 1</a>) plus about five content words, for roughly 10–13 explicitly taught words per week <span class="tag inf">INF</span> — sorted each Monday into transparent cognates (teach fast, use for morphology), partial or false cognates (contrast explicitly), and noncognates (full multi-day routine). The Academic Vocabulary List is the better master list than the AWL: its 570-family core covers about 14% of academic text versus about 7% for the AWL, and it does not exclude common academic words such as <em>company</em> and <em>market</em> (<a href="https://eapfoundation.com/vocab/academic/other/avl">EAP Foundation</a>). Lesaux's ALIAS program shows what an academic-vocabulary curriculum with daily writing can do at scale — 2,082 sixth graders, nine two-week units, gains in vocabulary, morphological awareness, expository comprehension, and written language, with "effects generally larger" for non-English-home students (<a href="https://education.ucdavis.edu/post/teaching-academic-vocabulary-english-learners">UC Davis</a>) — and its two-week, nine-day cycle is a reasonable model for the Progressing lane's word work.</p>
+<p>Comprehension routines complete the strand. Collaborative Strategic Reading has middle-school experimental support and worked better in ELA than in reading-intervention classes (<a href="https://meadowscenter.org/library/collaborative-strategic-reading-findings-from-experienced-implementers/">Meadows Center</a>), which is why the Progressing lane's Tuesday reading uses CSR's preview, click-and-clunk, gist, and wrap-up while the Emerging lane uses read-aloud plus partner reread <span class="tag inf">INF</span>. Text sets should be sequenced from introduction to elaboration to consequences and mix articles, video, infographics, and literary pieces so vocabulary recurs across sources (<a href="https://www.tesol.org/blog/posts/effective-approaches-to-reading-comprehension-the-power-of-text-sets/">TESOL text-sets blog</a>). For monitoring, Shanahan's caution applies: maze and ORF measure sentence-level processing and speed, not comprehension growth, so use them as screeners for the Newcomer lane and instead track the Lexile of graded passages students can handle each quarter (<a href="https://www.shanahanonliteracy.com/blog/on-progress-monitoring-maze-tests-and-reading-comprehension-assessment">Shanahan on Literacy</a>); DIBELS 8 materials stop at grade 8, so any high-school use is off-level and unnormed (<a href="https://dibels.uoregon.edu/sites/default/files/2026-07/dibels8_admin_scoring_guide.pdf">DIBELS 8 Admin Guide</a>).</p>
+</section>
+<section id="the-90-minute-block-and-the-five-day-cyc"><h2>The 90-minute block and the five-day cycle</h2>
+<p>No source provides a research-validated minute-by-minute ELD block; the template below is a synthesis <span class="tag inf">INF</span> that places the strong-evidence ingredients in the longest slots and borrows its shape from Manitoba's "hourglass" workshop (whole-class mini-lesson → regroup → teacher-led flexible group while others work independently → conferencing → closure), the only concrete multilevel time structure located (<a href="https://www.edu.gov.mb.ca/k12/docs/support/multilevel/chap4.pdf">Manitoba ch. 4</a>). The oral-heavy split reflects Saunders' hypothesis-level ~60/40 guideline (<a href="https://csaa.wested.org/wp-content/uploads/2019/11/EJ1014023.pdf">Saunders et al. 2013</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Minutes</th>
+<th>Segment</th>
+<th>What happens</th>
+<th>Lane differentiation</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–10</td>
+<td>Entry + oral warm-up</td>
+<td>Posted objectives read aloud; Kinsella write-then-talk prompt on yesterday's text or today's visual; public-voice norm</td>
+<td>Same prompt; E uses word-level frames, P clause-level frames; N may respond in Spanish then English</td>
+<td><span class="tag pc">PC</span> Kinsella routine (<a href="https://docushare.everett.k12.wa.us/docushare/dsweb/Get/Rendition-324445/Kinsella%20rBook%20Academic%20Discussion%20NSI%202007.pdf">Kinsella 2007</a>)</td>
+</tr>
+<tr>
+<td>10–30</td>
+<td>Whole-class anchor text/visual + intensive vocabulary</td>
+<td>Grade-band anchor via read-aloud, video, or chunked text; 5–8 target words through the cognate sort, bilingual Frayer, multiple-meaning check, illustration</td>
+<td>Same text for all ("same text, different task"); E gets tiered version and word bank; P annotates</td>
+<td><span class="tag rs">R-strong</span> WWC Rec. 1 (<a href="https://ies.ed.gov/ncee/WWC/Docs/PracticeGuide/wwc_ellwebinarslides_052114.pdf">IES/WWC</a>)</td>
+</tr>
+<tr>
+<td>30–50</td>
+<td>Structured academic conversation</td>
+<td>Precision partners (alternate-ranked so an E student sits with a mid-P student, never the extremes); written prep → partner rehearsal → assigned listening task → random calling; prompts, not recasts, for correction</td>
+<td>Partnerships double as multilingual collaborative pairs: P students broker meaning in Spanish, E students must produce the English output</td>
+<td><span class="tag rs">R-strong</span> WWC Rec. 2, Saunders G12; <span class="tag pc">PC</span> Kinsella/Zwiers (<a href="https://www.sausd.us/cms/lib5/CA01000471/Centricity/Domain/5879/Accelerating%20Oral%20Language%20with%20Academic%20Conversations.pdf">Zwiers</a>; <a href="https://www.tesol.org/media/xsnhf0f5/14144-chapter-5_translanguaging-guide-march-2013.pdf">CUNY-NYSIEB</a>)</td>
+</tr>
+<tr>
+<td>50–78</td>
+<td>Rotation (two 14-minute rounds)</td>
+<td>Teacher table (homogeneous 3–5): N/E every day for phonics or sentence-level grammar; P on alternating days for paragraph/essay conferencing and the grammar ladder. Chromebook station: Flashlight360 recording of the week's speaking mirror, leveled reading, listening practice, DRC practice items. Collaborative station: tiered task on the shared text</td>
+<td>Guarantees the Newcomer lane meets the teacher daily; Challenge students draft unframed extended writing</td>
+<td><span class="tag rm">R-moderate</span> WWC Rec. 4; <span class="tag rh">R-hyp</span> Saunders G5; device station is a self-efficacy/practice station, not the growth engine (<a href="https://escholarship.org/uc/item/0096v6fn">Walters 2012</a>)</td>
+</tr>
+<tr>
+<td>78–90</td>
+<td>Content-anchored quick write + closure</td>
+<td>Quick write with lane frames; "unpack a super sentence" from the text; can-do self-check; exit ticket scored 0–2 and banded to a level</td>
+<td>E: 2–4 sentences; P: paragraph; both tied to the week's writing product</td>
+<td><span class="tag rmin">R-minimal</span> WWC Rec. 3; <span class="tag pc">PC</span> Amplify "super sentence" (<a href="https://my.amplify.com/resources/wp-content/uploads/ca-ela/6-Lesson_Cycle_with_standardsCA-ELD.pdf">Amplify 6-Lesson Cycle</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>The five-day cycle layers the ELPA21 mirror rotation onto the block so that every domain is practiced weekly in roughly blueprint proportion <span class="tag inf">INF</span>, adapting Amplify's six-lesson cycle (build background → read and discuss → write → share → unpack a sentence) to a five-day week (<a href="https://my.amplify.com/resources/wp-content/uploads/ca-ela/6-Lesson_Cycle_with_standardsCA-ELD.pdf">Amplify 6-Lesson Cycle</a>). <strong>Monday — build the field:</strong> launch the week's topic with visuals or video, introduce the 5–8 words and the cognate sort, run the Listening mirror task (alternating Short Conversation, Academic Lecture, Listen for Information, and Academic Debate). <strong>Tuesday — read and analyze:</strong> anchor text plus tiered versions; CSR for the Progressing lane, read-aloud and partner reread for Emerging; the Reading mirror (Short Paragraphs or Short/Extended Informational or Literary Set; one Argument and Support Essay Set per unit). <strong>Wednesday — language focus:</strong> explicit teaching of the week's grammar rung, sentence combining, and the structured conversation; the Speaking mirror recorded in Flashlight360 (rotating Compare Pictures, Observe and Report, Analyze a Visual and a Claim, Language Arts Presentation). <strong>Thursday — write:</strong> joint construction then independent writing in the week's genre; the Writing mirror (rotating Respond to Peer Email, Construct a Claim, Storyboard, Discrete Editing, Writing Questions). <strong>Friday — produce, present, assess:</strong> exit task, portfolio selection, Chromebook self-access, and extra small-group rounds for the Newcomer lane. Explicit device onboarding in Weeks 1–2 is not optional: with low-literate adult newcomers, most Chromebook barriers "happen at the commencement of the program," and scaffolded instruction moved learners from emergent to competent users (<a href="https://lesllasp.journals.publicknowledgeproject.org/index.php/lesllasp/article/view/6208">LESLLA proceedings</a>).</p>
+<p>For walkthroughs, post one content objective and <strong>two language objectives tied to the same function</strong>, one per lane, with can-do statements lifted from the Level 1–2 and Level 3–4 descriptors of the targeted standard; that mirrors Gibbons' principle of holding cognitive demand constant while varying the scaffold (<a href="https://www.pearsoncanadaschool.com/content/dam/websites/pearson-canada-school/assets/documents/888/gibbonschapter.pdf">Gibbons ch. 1</a>). A worked example for Week 11 (health advice): <em>MS CCRS:</em> W.9-10.1, SL.9-10.6. <em>MS ELP:</em> Standards 2, 4, 7. <em>Content objective:</em> Students will explain a health problem and recommend a response using evidence from a clinic infographic. <em>Language objective (Emerging):</em> I can describe a symptom and give advice using "I have <strong><em>" and "You should </em></strong>." <em>Language objective (Progressing):</em> I can write an advice email that states a claim, gives two reasons, and uses a first-conditional sentence ("If you <strong><em>, you should </em></strong>"). <em>Can-do (L1–2, ELP 4):</em> express an opinion about a familiar topic using formulaic expressions and modeled sentences; <em>Can-do (L3–4, ELP 4):</em> construct a claim, provide sufficient reasons, and provide a concluding sentence (<a href="https://www.oregon.gov/ode/students-and-family/equity/EngLearners/Documents/ELPStandardsGrade9-12.pdf">Oregon ODE, ELP Standards 9–12</a>).</p>
+</section>
+<section id="assessment-and-pacing-calendar"><h2>Assessment and pacing calendar</h2>
+<p>The assessment system has three layers that feed one another <span class="tag inf">INF</span>: a weekly one-domain exit artifact, a four-domain unit check every 4–5 weeks, and a four-domain benchmark at each quarter boundary that supplies the evidence the SET's quarterly LSP review requires. For scoring, the only public ELPA21 rubric is the screener's 0–2 speaking rubric (2 = meaning clear despite some errors; 1 = frequent errors that may significantly interfere; 0 = refusal, non-English, or single-word yes/no) (<a href="https://www.oregon.gov/ode/educator-resources/assessment/Documents/ELPA_Screener_Step_Two_Speaking_Scoring.pdf">ELPA Screener Speaking Scoring</a>); no summative writing rubric was found, so classroom writing rubrics must be derived from the five-level proficiency descriptors and the domain cut scores (<a href="https://lesd.k12.or.us/wp-content/uploads/2022/05/ELPA-Performance-Standards.pdf">ELPA Performance Standards</a>). The workable scheme is to score every weekly speaking and writing artifact twice — 0–2 for task completion and a Level 1–5 band from the descriptors — and store both in Flashlight360 so quarterly benchmarks produce a per-domain level trajectory that Ellevation's LSP goals can be checked against. Grading itself is a gap: MDE's 2016 guide "does not address EL-specific grading policies," so a growth-based grade built on domain movement, task-completion scores, and a portfolio tied to LSP goals is the most defensible design but not a state-mandated one (<a href="https://content.schoolinsites.com/api/documents/b552f0fe8ddf4b76b207e3adc2e9270f.pdf">MDE 2016 EL Guide</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Weeks</th>
+<th>Dates (generic MS; verify Laurel)</th>
+<th>Required or anchor event</th>
+<th>Course assessment move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–3</td>
+<td>Aug 3–21</td>
+<td>Screener open since Jul 20; 30-day screening for new enrollees; BOY progress report home with spring 2026 ELPT; LSP development by SET</td>
+<td>Baseline four-domain mini-ELPA staggered across the three weeks; Flashlight360 baseline speaking/writing; scale-score LSP goals in Ellevation; phonics and Spanish derivational-awareness screens for newcomers</td>
+</tr>
+<tr>
+<td>5, 13, 24, 34</td>
+<td>—</td>
+<td>—</td>
+<td>Unit checks (four domains, mirror tasks) at the close of Units 1, 3, 5, 7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Sep 28–Oct 2</td>
+<td>End Q1</td>
+<td><strong>Benchmark 1</strong> → SET/LSP review #1 → progress note home</td>
+</tr>
+<tr>
+<td>12–16</td>
+<td>Oct 19–Nov 13</td>
+<td>ACT WorkKeys fall (gr. 11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Nov 23–27</td>
+<td>Thanksgiving</td>
+<td>Low-stakes interview week</td>
+</tr>
+<tr>
+<td>18–20</td>
+<td>Nov 30–Dec 18</td>
+<td>Fall EOC retest window (retesters only); end Q2/semester Dec 18</td>
+<td><strong>Benchmark 2</strong> (Wk 20) → SET/LSP review #2 → progress note home</td>
+</tr>
+<tr>
+<td>24–28</td>
+<td>Jan 25–Feb 26</td>
+<td>NAEP Science (if selected); ACT Feb 23</td>
+<td>DRC practice-test segments Wk 27; <strong>Benchmark 3 / full dress rehearsal</strong> Wk 28 with headsets, recording, dictionary-only accommodation</td>
+</tr>
+<tr>
+<td>29–34</td>
+<td>Mar 1–Apr 16 (spring break Mar 29–Apr 2)</td>
+<td><strong>ELPT Mar 1–Apr 16</strong>; ACT WorkKeys spring Mar 1–26; ACT Mar 23; end Q3 ~Mar 12</td>
+<td>Domain sittings scheduled with OSA; SET/LSP review #3 (Wk 30); low-stakes speaking/writing maintenance; Unit 7 portfolio check Wk 34</td>
+</tr>
+<tr>
+<td>35–36</td>
+<td>Apr 19–30</td>
+<td>ACT Apr 20; <strong>English II opens Apr 26</strong></td>
+<td>English II accommodation rehearsal for 10th graders (dictionary, read-aloud, extended time, multiple sessions, all documented on the LSP)</td>
+</tr>
+<tr>
+<td>Closeout</td>
+<td>May 3–21</td>
+<td>English II through May 21; screener closes May 27</td>
+<td><strong>Benchmark 4</strong>; final portfolio and can-do self-assessment; SET #4 / LSP annual update drafts; ELPT results arrive after the course ends, so exit decisions fall to summer</td>
+</tr>
+</tbody>
+</table>
+<p>Two standing protocols sit outside the calendar. A mid-year newcomer triggers the screener on DRC INSIGHT, an LSP in Ellevation within 10 school days, a baseline speaking/writing sample in Flashlight360, and placement in the Newcomer lane with the current unit's mirror tasks at Level 1 scaffolds — never a restart of Unit 1, since the theme calendar is designed so any unit's launch week is an entry point <span class="tag inf">INF</span>. And because the ELPT prohibits read-aloud of items while English II permits it, the dictionary-only norm should govern every Benchmark and the Week 28 rehearsal, while read-aloud and extended-time routines are rehearsed separately in Weeks 35–36 so that both sets of accommodations are documented as "routine classroom" practice (<a href="https://content.schoolinsites.com/api/documents/7667bcbd3f704c4f9c1ebe3ea2c8aacf.pdf">MTAM Nov 2017</a>).</p>
+</section>
+<section id="gaps-and-what-to-verify-before-publishin"><h2>Gaps and what to verify before publishing</h2>
+<p>The evidence base is thinnest exactly where this curriculum lives. No experimental study tests a 90-minute mixed-level secondary ELD block, the WWC guide stops at middle school, and NASEM declines to rate high-school practices (<a href="https://www.nationalacademies.org/read/24677/chapter/10">NASEM ch. 8</a>); SIOP's flagship trial fails WWC standards (<a href="https://ies.ed.gov/ncee/wwc/study/75340">WWC</a>); station rotation evidence is EFL, not U.S. secondary ESL; and Chromebook practice evidence is elementary or adult. Multilevel frameworks (Bell, CAL, Manitoba) are practitioner-derived, and no study compares "same text, different task" with "different text, same task." Motivation and identity-text claims are correlational or theoretical. There is <strong>no evidence base for whole-class children's novels with high-school ELs</strong>; no source addresses a primary-grade novel with secondary newcomers, and the indirect evidence (adolescent-appropriate basic-literacy materials, hi-lo publishers' age-respect argument, Shanahan's grade-level-text principle) points toward a hi-lo or YA text with audio and a Spanish edition rather than a primary-grade book (<a href="https://cal.org/helping-newcomer-students-executive-summary">CAL</a>; <a href="https://www.educationnext.org/right-reading-level-or-right-reading-challenge/">Education Next</a>). Writing Next effect sizes and the CCSS Lexile stretch bands were not verified in the fetched sources and are deliberately not quoted here.</p>
+<p>On the Mississippi side, every mdek12.org document — the May 2018 EL Guidelines, the February 2026 MTAM, the Elementary Education and Federal Programs EL pages, the state-hosted ELP Standards — returned 403, so policy citations rely on MDE's 2016 guide and 2020 parent guide as mirrored by districts and on Meridian's and Lowndes' district plans. Those plans differ in how they state the exit rule (Meridian: Level 4+ in all four domains; Lowndes 2019: overall 4–5 plus reading and writing 4–5), which is a reason to confirm the current rule with MDE's EL coordinator before it is written into an LSP template (<a href="https://resources.finalsite.net/images/v1782355832/mpsdnoworg1/evmoepguikw0irdl9nrz/MPSDELDistrictPlan2025-2026.pdf">Meridian PSD EL Plan</a>; <a href="https://www.lowndes.k12.ms.us/departments/curriculum-and-instruction/files/documents/EL%20Plan%20Board%20Approved%208-9-19.pdf">Lowndes EL Plan</a>). The Laurel 2026–27 calendar, its intersession structure, quarter end dates, and the Thanksgiving-week closure were not found, so every date in the map after Week 11 is generic Mississippi. The 2021–22 approved-courses manual showed no ESL course codes carrying credit, and the 2025–26 manual was not located (<a href="https://content.schoolinsites.com/api/documents/377557cf9adc4fff9d13b8717f84b000.pdf">Approved Courses 2021–22</a>). The grades 11–12 ELP/ELA correspondence table, the ELPA21 screener blueprint for 9–12, the Mississippi domain administration order on DRC INSIGHT, the ELPT results-release date, and any Flashlight360 or Ellevation vendor guidance on monitoring cadence were not retrievable. Finally, the 2025 accountability "revamp" reported in the press may alter the 5% EL weight or the five-year target (<a href="https://www.mississippifreepress.org/mississippi-school-districts-achieve-record-accountability-ratings-prompting-model-revamp/">Mississippi Free Press</a>); the business rules cited here predate it.</p>
+</section>
+<section id="conclusion"><h2>Conclusion</h2>
+<p>The most useful reframing this synthesis offers is that a combined Emerging/Progressing block is not two curricula taught at once but one theme calendar with a two-rung ladder at every point where language is specified — grammar, text version, writing length, and can-do statement — and that the ladder's rungs are already written in the ELP Standards' Level 1–2 versus Level 3–4 descriptors. Read that way, the standards document doubles as the differentiation plan, the walkthrough posting template, and the rubric source, which collapses three administrative demands into one. The second shift is in what counts as evidence for the design: the block's architecture (vocabulary anchored in short informational text, daily structured partner talk, a guaranteed daily small group for newcomers) is where the strong and moderate evidence lives, while the parts that look most like "curriculum" — the unit order, the grammar sequence, the genre progression — are consensus engineering that should be presented to administrators as such.</p>
+<p>Going forward, the map's own assessment layer is the research the field lacks. Because the ELPT is scored on an overall scale and §15 rewards one-fifth-of-the-gap growth per year, a teacher who logs Flashlight360 artifacts with 0–2 and level-band scores against each unit's mirror tasks will, by Benchmark 4, hold a per-domain trajectory for every student that no published study of grade 9–12 ELD blocks currently provides — exactly the kind of growth evidence an NBCT portfolio or a district coordinator's program review needs. The map should therefore be treated as a hypothesis with its measurement built in, and the Week 20 and Week 28 benchmarks as the points at which the lane assignments, the novel choice, and the pace of the grammar ladder get revised on data rather than defended on principle.</p></section>
+</main>
+
+<footer><div class="in">
+  <b>EL Publishing</b> · Richard A. Daniel, M.Ed. · ENL/EL Specialist, Laurel High School<br>
+  Research synthesis compiled October 2026. Mississippi policy citations drawn from MDE documents mirrored on district sites; confirm against current MDE EL Guidelines before quoting as policy. Calendar dates after Week 11 are generic Mississippi 2026–27 and should be reconciled with the Laurel School District calendar.
+</div></footer>
+
+<script>
+(function(){
+  var tbl=document.getElementById('weekmap'); if(!tbl) return;
+  var wrap=document.createElement('div'); wrap.className='filters';
+  var units=[['all','All weeks'],['1','U1 Who We Are'],['2','U2 Our Days'],['3','U3 Food & Health'],['4','U4 Then & Now'],['5','U5 How Things Work'],['6','U6 Claims & Evidence'],['7','U7 Voices (ELPT)'],['8','U8 Looking Forward']];
+  var lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='Filter:';wrap.appendChild(lbl);
+  var cur='all', q='';
+  function apply(){
+    tbl.querySelectorAll('tbody tr').forEach(function(tr){
+      var ok=(cur==='all'||tr.getAttribute('data-unit')===cur);
+      if(ok&&q){ok=tr.textContent.toLowerCase().indexOf(q)>-1;}
+      tr.classList.toggle('hide',!ok);
+    });
+  }
+  units.forEach(function(u){
+    var b=document.createElement('button');b.className='fbtn'+(u[0]==='all'?' on':'');b.textContent=u[1];
+    b.onclick=function(){cur=u[0];wrap.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');apply();};
+    wrap.appendChild(b);
+  });
+  var s=document.createElement('input');s.className='search';s.placeholder='Search the map (e.g., "past tense", "Storyboard", "SET")';
+  s.oninput=function(){q=s.value.trim().toLowerCase();apply();};
+  wrap.appendChild(s);
+  var scroller=document.createElement('div');scroller.className='tscroll';
+  tbl.parentNode.insertBefore(wrap,tbl); tbl.parentNode.insertBefore(scroller,tbl); scroller.appendChild(tbl);
+  // wrap other tables for horizontal scroll
+  document.querySelectorAll('section table:not(#weekmap)').forEach(function(t){var d=document.createElement('div');d.className='tscroll';t.parentNode.insertBefore(d,t);d.appendChild(t);});
+  // legend under the evidence-tag line
+  var leg=document.createElement('div');leg.className='legend';
+  [['rs','R-strong','WWC strong / meta-analysis'],['rm','R-moderate','WWC moderate'],['rmin','R-minimal','WWC minimal'],['rh','R-hyp','hypothesis-level'],['pc','PC','practitioner consensus'],['inf','INF','this map\'s own inference']].forEach(function(l){var sp=document.createElement('span');sp.innerHTML='<span class="tag '+l[0]+'">'+l[1]+'</span> '+l[2];leg.appendChild(sp);});
+  var intro=document.querySelector('.intro'); if(intro) intro.appendChild(leg);
+})();
+</script>
+</body>
+</html>
