@@ -240,6 +240,22 @@ html.theming,html.theming *{transition:background-color .45s ease,color .45s eas
 .contact .links a{display:inline-flex;align-items:center;min-height:40px}
 .ls-panel a,.hhm a,#qa p.small a{display:inline-block;padding:.5rem 0}
 .hhm button,.ls-tabs [role=tab]{min-height:40px}
+
+/* Partnerships */
+#partner .pgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start;margin-top:22px}
+#partner .plist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#partner .plist li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:6px;transition:border-color .2s,transform .2s}
+#partner .plist li:hover{border-color:var(--gold);transform:translateX(3px)}
+#partner .plist .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--gold);padding-top:3px}
+#partner .plist b{display:block;font-weight:600;letter-spacing:.02em}
+#partner .plist span{display:block;font-size:.9rem;opacity:.75;margin-top:2px}
+#partner .pcard{display:grid;gap:12px}
+#partner .pcard img{width:100%;height:auto;aspect-ratio:7/4;object-fit:cover;display:block;border-radius:8px;box-shadow:0 18px 40px rgba(20,25,68,.35);border:1px solid rgba(201,162,39,.35)}
+#partner .pcard figcaption{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+#partner .pnote{margin-top:18px;font-size:.92rem;opacity:.8}
+#partner .pacts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+#partner .btn.ghost{color:var(--fg)}
+@media (max-width:860px){#partner .pgrid{grid-template-columns:1fr}}
 </style>
 <style>
 /* Layout: navy masthead with portrait, then a wide-margin editorial column; gold used only for rules, eyebrows and the live counters. */
@@ -579,6 +595,7 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
     <li><a href="#voices">Voices</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#qa">Q&amp;A</a></li>
+    <li><a href="#partner">Partner</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><button type="button" class="theme" id="themeBtn" aria-label="Switch color theme" title="Light / dark"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="5"/><g class="rays" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></g><circle class="mask" cx="16" cy="9" r="5.5"/></svg></button></li>
   </ul>
@@ -820,6 +837,32 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
   <div class="qa-more"><button type="button" class="btn ghost" id="qaMore" style="min-height:40px">Show all 13 questions ↓</button></div>
   <p class="qa-empty" id="qaEmpty" hidden>No questions match that — try another word, or <a href="#contact">send yours</a>.</p>
 </div></section>
+
+<section id="partner"><div class="wrap rv">
+  <p class="eyebrow">Partnerships</p>
+  <h2 style="font-size:2rem;font-weight:500">I build EL resources for schools.</h2>
+  <p class="lead">Not a consultant, not a program audit — a builder. If your school or district needs an English-learner resource that doesn't exist yet, I make it: written for your grade bands, your levels, your Chromebooks, and published so your teachers can use it the next morning.</p>
+  <div class="pgrid">
+    <ul class="plist">
+      <li><span class="n">01</span><div><b>Curriculum &amp; scope</b><span>36-week EL units, 90-minute blocks, language-function scope &amp; sequence — K–12 or a single course.</span></div></li>
+      <li><span class="n">02</span><div><b>Leveled readables</b><span>Emerging and Progressing texts on your topics, with bilingual EN/ES supports and comprehension tasks.</span></div></li>
+      <li><span class="n">03</span><div><b>ELPA21 practice</b><span>Reading-studio sets, four-skill workbooks, and speaking/writing task banks that mirror the test.</span></div></li>
+      <li><span class="n">04</span><div><b>Digital tools &amp; sites</b><span>Single-file web apps — no logins, no installs — that run on a school Chromebook and a teacher's phone.</span></div></li>
+      <li><span class="n">05</span><div><b>Magazines &amp; guides</b><span>Teacher, student, and family editions for your community, in the voice of your school.</span></div></li>
+    </ul>
+    <figure class="pcard">
+      <img src="partner-card.jpg" alt="EL Publishing partnerships card — Richard A. Daniel, custom EL resources for schools" loading="lazy" width="1400" height="800">
+      <img src="partner-card-back.jpg" alt="Back of the partnerships card listing what I build: curriculum and scope, leveled readables, ELPA21 practice, digital tools and sites, magazines and guides" loading="lazy" width="1400" height="800">
+      <figcaption>Many Voices · One Storm · scan the card for the full catalog</figcaption>
+    </figure>
+  </div>
+  <p class="pnote">Every resource in the <a href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener">EL Publishing Hub</a> started as something one classroom needed. Send me the need; I'll send back the build.</p>
+  <div class="pacts">
+    <a class="btn solid" href="mailto:richard.spanishteacher@gmail.com?subject=EL%20resource%20for%20our%20school">Request a resource</a>
+    <a class="btn ghost" href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener">Browse what exists</a>
+  </div>
+</div></section>
+
 <section class="contact" id="contact"><div class="wrap">
   <div>
     <p class="eyebrow">Contact</p>
