@@ -120,6 +120,48 @@
 .hubcats span{font-size:.85rem;color:var(--muted)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lq-opts button{background:var(--surface)}:root:not([data-theme="light"]) .lq-opts button:hover{background:var(--gold-soft)}}
 :root[data-theme="dark"] .lq-opts button{background:var(--surface)}
+
+/* 1. word swap */
+.hero h1 em.swap{display:inline-block;min-width:5.2ch;text-align:left;transition:opacity .35s,transform .35s}
+.hero h1 em.swap.out{opacity:0;transform:translateY(.35em) rotateX(60deg)}
+/* 2. lightning flash */
+.hero .flash{position:absolute;inset:0;background:radial-gradient(ellipse at var(--fx,60%) 20%,rgba(255,242,184,.55),rgba(201,162,39,.12) 35%,transparent 65%);opacity:0;pointer-events:none;transition:opacity .08s}
+.hero .flash.on{opacity:1;transition:opacity .04s}
+/* 4. heading underline draw */
+.js .rv h2{position:relative;padding-bottom:.35rem}
+.js .rv h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:72px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.7,.2,1) .25s}
+.js .rv.in h2::after{transform:scaleX(1)}
+.hero h1::after{display:none}
+/* 6. stagger */
+.js .rv .lane,.js .rv .hubcats a,.js .rv .stat,.js .rv .pubstats>div{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in .lane,.js .rv.in .hubcats a,.js .rv.in .stat,.js .rv.in .pubstats>div{opacity:1;transform:none}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(1){transition-delay:.05s}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(2){transition-delay:.13s}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(3){transition-delay:.21s}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(4){transition-delay:.29s}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(5){transition-delay:.37s}
+.js .rv.in :is(.lane,.hubcats a,.stat,.pubstats>div):nth-child(6){transition-delay:.45s}
+/* 9. quiz payoff */
+@keyframes punch{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}
+.lq-res.show .badge{animation:punch .55s cubic-bezier(.2,.9,.3,1.3) both}
+.lq-meter .seg i{transform:scaleX(0);transform-origin:left;transition:transform .4s ease,background .3s}
+.lq-res.show .lq-meter .seg i{transform:scaleX(1)}
+.lq-res.show .lq-meter .seg:nth-child(1) i{transition-delay:.15s}.lq-res.show .lq-meter .seg:nth-child(2) i{transition-delay:.3s}.lq-res.show .lq-meter .seg:nth-child(3) i{transition-delay:.45s}.lq-res.show .lq-meter .seg:nth-child(4) i{transition-delay:.6s}
+.lq{position:relative;overflow:hidden}
+.lq canvas.confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+/* 13. theme toggle */
+.theme{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,162,39,.5);background:transparent;color:var(--gold);cursor:pointer;padding:0;vertical-align:middle;transition:transform .3s,background .2s}
+.theme:hover{background:rgba(201,162,39,.15);transform:rotate(15deg)}
+.theme svg{overflow:visible}
+.theme .sun{fill:currentColor;transition:r .4s}
+.theme .rays{stroke:currentColor;stroke-width:2;transition:opacity .3s,transform .5s;transform-origin:12px 12px}
+.theme .mask{fill:var(--navy);transform:translate(10px,-10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+html[data-theme="dark"] .theme .rays{opacity:0;transform:rotate(90deg) scale(.4)}
+html[data-theme="dark"] .theme .sun{r:7}
+html[data-theme="dark"] .theme .mask{transform:translate(0,0)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .theme .rays{opacity:0;transform:rotate(90deg) scale(.4)}html:not([data-theme="light"]) .theme .sun{r:7}html:not([data-theme="light"]) .theme .mask{transform:translate(0,0)}}
+html.theming,html.theming *{transition:background-color .45s ease,color .45s ease,border-color .45s ease!important}
+@media (prefers-reduced-motion:reduce){.hero h1 em.swap,.js .rv h2::after,.js .rv .lane,.js .rv .hubcats a,.js .rv .stat,.js .rv .pubstats>div,.lq-res.show .badge,.lq-meter .seg i{transition:none;animation:none;opacity:1;transform:none}.hero .flash{display:none}}
 </style>
 <style>
 /* Layout: navy masthead with portrait, then a wide-margin editorial column; gold used only for rules, eyebrows and the live counters. */
@@ -395,13 +437,14 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
     <li><a href="#hhm">Heritage Month</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><button type="button" class="theme" id="themeBtn" aria-label="Switch color theme" title="Light / dark"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="5"/><g class="rays" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></g><circle class="mask" cx="16" cy="9" r="5.5"/></svg></button></li>
   </ul>
 </div></nav>
 
-<header class="hero" id="top"><canvas id="storm" aria-hidden="true"></canvas><div class="wrap">
+<header class="hero" id="top"><canvas id="storm" aria-hidden="true"></canvas><div class="flash" id="flash" aria-hidden="true"></div><div class="wrap">
   <div>
     <p class="eyebrow">ENL / EL Specialist · Laurel, Mississippi</p>
-    <h1>Every teacher is a <em>language</em> teacher.</h1>
+    <h1>Every teacher is a <em class="swap" id="swapWord" aria-live="off">language</em> teacher.</h1>
     <p class="role">Richard A. Daniel, M.Ed. — thirty-one years in classrooms across Mississippi, Alabama and Georgia, now building the English-learner program at Laurel High School and publishing the tools other EL teachers wish they had.</p>
     <p class="tag">Many Voices · One Storm</p>
     <div class="actions">
@@ -721,10 +764,35 @@ try{(function(){
     document.getElementById('lqLane').textContent=r.n;document.getElementById('lqTitle').textContent=r.t;document.getElementById('lqDesc').textContent=r.d;document.getElementById('lqMove').textContent=r.mv;
     var m=document.getElementById('lqMeter');m.innerHTML='';L.forEach(function(x,k){var d=document.createElement('div');d.className='seg'+(k===best?' on':'');d.innerHTML='<i></i><span>'+x.n+'</span>';m.appendChild(d)});
     var e=document.getElementById('lqEdge');e.textContent=edge;e.style.display=edge?'':'none';
-    var a=document.getElementById('lqLink');a.href=r.url;a.textContent=r.lbl;res.classList.add('show')}
+    var a=document.getElementById('lqLink');a.href=r.url;a.textContent=r.lbl;res.classList.add('show');confetti()}
+  function confetti(){if(reduce)return;var box=document.getElementById('lanequiz'),cv=document.createElement('canvas');cv.className='confetti';box.appendChild(cv);
+    var ctx=cv.getContext('2d'),W=cv.width=box.offsetWidth,H=cv.height=box.offsetHeight,P=[],cols=['#C9A227','#F3E6B8','#1E2761','#2F3B8A','#ffffff'];
+    for(var i=0;i<110;i++)P.push({x:W*0.2+Math.random()*W*0.6,y:H*0.35,vx:(Math.random()-.5)*9,vy:-6-Math.random()*7,r:3+Math.random()*4,c:cols[i%cols.length],a:Math.random()*6.28,s:(Math.random()-.5)*.3,l:1});
+    var t0=Date.now();(function frame(){ctx.clearRect(0,0,W,H);var alive=0;P.forEach(function(p){p.vy+=.22;p.x+=p.vx;p.y+=p.vy;p.a+=p.s;p.l-=.011;if(p.l<=0||p.y>H)return;alive++;ctx.save();ctx.globalAlpha=Math.max(0,p.l);ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.r,-p.r*.6,p.r*2,p.r*1.2);ctx.restore()});
+      if(alive&&Date.now()-t0<2600)requestAnimationFrame(frame);else cv.remove()})()}
   document.getElementById('lqAgain').addEventListener('click',function(){i=0;score=0;res.classList.remove('show');body.style.display='';render()});
   render();
 })()}catch(e){}
+
+// 1. word swap in the headline
+(function(){var el=document.getElementById('swapWord');if(!el||reduce)return;var words=['language','reading','writing','vocabulary','language'],i=0;
+  setInterval(function(){el.classList.add('out');setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.classList.remove('out')},360)},3200)})();
+// 2. lightning in the storm
+(function(){var f=document.getElementById('flash'),cv=document.getElementById('storm');if(!f||!cv||reduce)return;
+  function bolt(){var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,x=W*(0.25+Math.random()*0.5),y=0,pts=[[x,y]];
+    while(y<H*0.75){x+=(Math.random()-.5)*60;y+=20+Math.random()*30;pts.push([x,y])}
+    f.style.setProperty('--fx',(pts[0][0]/W*100)+'%');f.classList.add('on');
+    var n=0;(function draw(){ctx.save();ctx.strokeStyle='rgba(255,242,184,'+(0.9-n*0.3)+')';ctx.lineWidth=2.2-n*.6;ctx.shadowColor='rgba(201,162,39,.9)';ctx.shadowBlur=18;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.stroke();ctx.restore();n++;if(n<3)setTimeout(draw,50)})();
+    setTimeout(function(){f.classList.remove('on')},120);setTimeout(function(){f.classList.add('on');setTimeout(function(){f.classList.remove('on')},60)},220);
+    schedule()}
+  function schedule(){setTimeout(bolt,8000+Math.random()*6000)}
+  setTimeout(bolt,2500)})();
+// 13. theme toggle
+(function(){var b=document.getElementById('themeBtn');if(!b)return;var root=document.documentElement;
+  try{var saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved)}catch(e){}
+  b.addEventListener('click',function(){var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var next=dark?'light':'dark';root.classList.add('theming');root.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}
+    setTimeout(function(){root.classList.remove('theming')},500)})})();
 // stagger cards
 cards0=document.querySelectorAll('#grid .card');cards0.forEach(function(c,i){c.style.animationDelay=(i*70)+'ms'});
 // tilt
