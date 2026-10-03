@@ -775,7 +775,7 @@ try{(function(){
 })()}catch(e){}
 
 // 1. word swap in the headline
-(function(){var el=document.getElementById('swapWord');if(!el||reduce)return;var words=['language','reading','writing','vocabulary','language'],i=0;
+(function(){var el=document.getElementById('swapWord');if(!el||reduce)return;var words=['language','reading','writing','vocabulary'],i=0;
   setInterval(function(){el.classList.add('out');setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.classList.remove('out')},360)},3200)})();
 // 2. lightning in the storm
 (function(){var f=document.getElementById('flash'),cv=document.getElementById('storm');if(!f||!cv||reduce)return;
