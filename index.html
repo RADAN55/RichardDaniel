@@ -8,6 +8,12 @@
 <meta property="og:title" content="Richard A. Daniel">
 <meta property="og:description" content="ENL/EL Specialist · EL Publishing · Many Voices, One Storm">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://radan55.github.io/RichardDaniel/">
+<meta property="og:image" content="https://radan55.github.io/RichardDaniel/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://radan55.github.io/RichardDaniel/og.jpg">
+<link rel="canonical" href="https://radan55.github.io/RichardDaniel/">
 <meta name="theme-color" content="#1E2761">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231E2761'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23C9A227'%3ER%3C/text%3E%3C/svg%3E">
 <title>Richard A. Daniel</title>
@@ -129,8 +135,7 @@
 .hero .flash.on{opacity:1;transition:opacity .04s}
 /* 4. heading underline draw */
 .js .rv h2{position:relative;padding-bottom:.35rem}
-.js .rv h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:72px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.7,.2,1) .25s}
-.js .rv.in h2::after{transform:scaleX(1)}
+.js .rv h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:72px;background:var(--gold)}
 .hero h1::after{display:none}
 /* 6. stagger */
 .js .rv .lane,.js .rv .hubcats a,.js .rv .stat,.js .rv .pubstats>div{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
@@ -202,6 +207,18 @@ html.theming,html.theming *{transition:background-color .45s ease,color .45s eas
 .qa-links a:hover{background:var(--gold);color:#1B1F2E}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qa-links a{color:var(--gold)}:root:not([data-theme="light"]) .qa-links a:hover{color:#1B1F2E}}
 :root[data-theme="dark"] .qa-links a{color:var(--gold)}:root[data-theme="dark"] .qa-links a:hover{color:#1B1F2E}
+
+/* a11y: skip link + 40px tap targets */
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--gold);color:#1B1F2E;padding:10px 16px;border-radius:6px;font-weight:700;text-decoration:none}
+.skip:focus{left:12px}
+.nav ul a{display:inline-flex;align-items:center;min-height:40px;padding:0 4px}
+.theme{width:40px;height:40px}
+.btn.sm,.btn.ghost.sm,.copybtn,.filters button,.qa-filters button,.roles button,.fbtn,.lq-opts button,#lqAgain,.mm-actions .btn,.lq-res .acts .btn{min-height:40px}
+.copybtn{padding:.45rem .9rem}
+.brand{display:inline-flex;align-items:center;min-height:40px}
+.contact .links a{display:inline-flex;align-items:center;min-height:40px}
+.ls-panel a,.hhm a,#qa p.small a{display:inline-block;padding:.5rem 0}
+.hhm button,.ls-tabs [role=tab]{min-height:40px}
 </style>
 <style>
 /* Layout: navy masthead with portrait, then a wide-margin editorial column; gold used only for rules, eyebrows and the live counters. */
@@ -467,6 +484,7 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
 </head>
 <body>
 <div id="prog" aria-hidden="true"></div>
+<a class="skip" href="#about">Skip to content</a>
 <nav class="nav"><div class="wrap">
   <a class="brand" href="#top">Richard A. Daniel</a>
   <ul>
@@ -875,7 +893,7 @@ try{(function(){
     document.getElementById('lqLane').textContent=r.n;document.getElementById('lqTitle').textContent=r.t;document.getElementById('lqDesc').textContent=r.d;document.getElementById('lqMove').textContent=r.mv;
     var m=document.getElementById('lqMeter');m.innerHTML='';L.forEach(function(x,k){var d=document.createElement('div');d.className='seg'+(k===best?' on':'');d.innerHTML='<i></i><span>'+x.n+'</span>';m.appendChild(d)});
     var e=document.getElementById('lqEdge');e.textContent=edge;e.style.display=edge?'':'none';
-    var a=document.getElementById('lqLink');a.href=r.url;a.textContent=r.lbl;res.classList.add('show');confetti()}
+    var a=document.getElementById('lqLink');a.href=r.url;a.textContent=r.lbl;res.classList.add('show')}
   function confetti(){if(reduce)return;var box=document.getElementById('lanequiz'),cv=document.createElement('canvas');cv.className='confetti';box.appendChild(cv);
     var ctx=cv.getContext('2d'),W=cv.width=box.offsetWidth,H=cv.height=box.offsetHeight,P=[],cols=['#C9A227','#F3E6B8','#1E2761','#2F3B8A','#ffffff'];
     for(var i=0;i<110;i++)P.push({x:W*0.2+Math.random()*W*0.6,y:H*0.35,vx:(Math.random()-.5)*9,vy:-6-Math.random()*7,r:3+Math.random()*4,c:cols[i%cols.length],a:Math.random()*6.28,s:(Math.random()-.5)*.3,l:1});
