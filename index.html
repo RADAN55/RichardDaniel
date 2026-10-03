@@ -358,7 +358,7 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
 
 @media (max-width:820px){
   .hero .wrap{grid-template-columns:1fr}
-  .pwrap{justify-self:start;max-width:240px;order:-1}
+  .pwrap{justify-self:start;max-width:200px;order:2;margin-top:8px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .two,.contact .wrap{grid-template-columns:1fr}
   .lanes{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -497,7 +497,46 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
 .hub-go{font-weight:500;color:var(--gold);white-space:nowrap}
 @media (max-width:820px){.hub{grid-template-columns:auto 1fr}.hub-go{grid-column:2}}
 @media (prefers-reduced-motion:reduce){.hub{transition:none}}
+
+/* 10/10 pass: mobile nav, scrollspy, focus, seasonal, voices */
+@media (max-width:820px){
+  .nav .wrap{flex-wrap:nowrap;gap:8px;min-height:48px}
+  .nav ul{flex-wrap:nowrap;overflow-x:auto;gap:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 88%,transparent);padding:0 24px 0 8px}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav ul a{white-space:nowrap;font-size:.8rem;padding:0 8px}
+  .nav .brand{font-size:.95rem;flex-shrink:0;max-width:40vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .theme{width:36px;height:36px;flex-shrink:0}
+  .hero{padding-block:36px 48px}
+  h1{font-size:2.3rem}
+  .stat b{font-size:1.7rem}
+}
+.nav ul a[aria-current="true"]{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+/* seasonal heritage: compact off-season */
+.hhm.offseason .hhm-dates,.hhm.offseason .hhm-grid,.hhm.offseason .hhm-cards,.hhm.offseason .hhm-word,.hhm.offseason .hhm-more{display:none}
+.hhm.offseason{padding:28px 0}
+.hhm.offseason .hhm-top{margin:0}
+/* voices (testimonials) */
+#voices{display:none}
+#voices.has{display:block}
+.voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:1.6rem}
+.voice{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);padding:20px 22px;display:flex;flex-direction:column;gap:.6rem}
+.voice q{font-family:var(--display);font-size:1.12rem;line-height:1.4;color:var(--fg);quotes:"“" "”"}
+.voice q.es{font-style:italic;color:var(--muted);font-size:1rem}
+.voice cite{font-style:normal;font-size:.82rem;color:var(--muted)}
+.voice cite b{display:block;color:var(--fg);font-weight:600}
+@media (max-width:820px){.voices{grid-template-columns:1fr}}
+/* Q&A: show six, expand */
+.qa-grid.collapsed .qc:nth-child(n+7):not(.ask){display:none}
+.qa-more{margin-top:1rem;display:flex;justify-content:center}
+footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","@id":"https://radan55.github.io/RichardDaniel/#person","name":"Richard A. Daniel","honorificSuffix":"M.Ed.","jobTitle":"ENL/EL Specialist","worksFor":{"@type":"EducationalOrganization","name":"Laurel High School","address":{"@type":"PostalAddress","addressLocality":"Laurel","addressRegion":"MS","addressCountry":"US"}},"knowsLanguage":["en","es"],"url":"https://radan55.github.io/RichardDaniel/","image":"https://radan55.github.io/RichardDaniel/og.jpg","email":"mailto:rdaniel@laurelschools.org","knowsAbout":["English learners","ELPA21","Title III","SIOP","Mississippi EL compliance","Science of Reading"]},
+ {"@type":"WebSite","@id":"https://radan55.github.io/RichardDaniel/#site","url":"https://radan55.github.io/RichardDaniel/","name":"Richard A. Daniel · EL Publishing","publisher":{"@id":"https://radan55.github.io/RichardDaniel/#person"},"inLanguage":["en","es"]}
+]}
+</script>
 </head>
 <body>
 <div id="prog" aria-hidden="true"></div>
@@ -787,6 +826,16 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
   </div>
 </div></section>
 
+
+<section id="voices"><div class="wrap rv">
+  <p class="eyebrow">Voices</p>
+  <h2 style="font-size:2rem;font-weight:500">What colleagues and students say.</h2>
+  <div class="voices">
+    <!-- Add real quotes here, then add class="has" to <section id="voices"> to show the section.
+    <figure class="voice"><q>Quote in English.</q><q class="es">Cita en español (optional).</q><cite><b>Name</b>Role · School</cite></figure>
+    -->
+  </div>
+</div></section>
 <section id="journey"><div class="wrap rv">
   <p class="eyebrow">Journey</p>
   <h2 style="font-size:2rem;font-weight:500">Thirty-one years and counting.</h2>
@@ -812,7 +861,7 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
     <button type="button" aria-pressed="false" data-aud="students"><b>🎒 Students</b><small>2</small></button>
     <button type="button" aria-pressed="false" data-aud="families"><b>🏠 Families · Familias</b><small>2</small></button>
   </div>
-  <div class="qa-grid" id="qaGrid">
+  <div class="qa-grid collapsed" id="qaGrid">
     <article class="qc" data-aud="teachers"><div class="qc-top"><span class="qc-n">01</span><span class="qc-tag">🧑‍🏫 Teachers</span></div><h3>I have an English learner in my class and I don&#x27;t teach English. Where do I start?</h3><p>Post a language goal next to your content objective, give one sentence frame, and let the student talk before writing. That is Monday Move 1, and the Field Guide walks through the rest in plain language.</p><div class="qc-links"><a href="https://radan55.github.io/el-field-guide/" target="_blank" rel="noopener">The EL Field Guide →</a> <a href="https://radan55.github.io/mselablueprintinfo01/monday-moves.html" target="_blank" rel="noopener">Monday Moves (36 weekly cards) →</a></div></article>
     <article class="qc" data-aud="teachers"><div class="qc-top"><span class="qc-n">02</span><span class="qc-tag">🧑‍🏫 Teachers</span></div><h3>What do ELPA21 levels 1–5 actually mean for my classroom?</h3><p>Level 1–2 students need visuals, frames and Spanish as a bridge; Level 3–4 students can handle grade-level text with pre-taught vocabulary; a student exits only when every domain reaches Level 4. The lane finder above turns a level into a plan.</p><div class="qc-links"><a href="#lanequiz">Which lane is your student in? →</a> <a href="https://www.elpa21.org/" target="_blank" rel="noopener">ELPA21 consortium →</a></div></article>
     <article class="qc" data-aud="teachers"><div class="qc-top"><span class="qc-n">03</span><span class="qc-tag">🧑‍🏫 Teachers</span></div><h3>Can I grade an English learner the same way as everyone else?</h3><p>Grade the content, not the English — and grade against the accommodations on the student&#x27;s Language Service Plan. Reading aloud, extra time, a word-to-word dictionary and modified assignments are documented supports, not favors.</p><div class="qc-links"><a href="https://radan55.github.io/ms-el-command-center/" target="_blank" rel="noopener">MS EL Command Center · LSP &amp; accommodations →</a></div></article>
@@ -827,6 +876,7 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
     <article class="qc" data-aud="teachers"><div class="qc-top"><span class="qc-n">12</span><span class="qc-tag">🧑‍🏫 Teachers</span></div><h3>Which tech tools are worth my time right now?</h3><p>Five verified this month, all free and Chromebook-ready, with a classroom use for each lane — and a new one added every week.</p><div class="qc-links"><a href="#tech">Tech Tools section →</a> <a href="https://radan55.github.io/everyteacher/tech-radar.html" target="_blank" rel="noopener">EL Tech Radar (full column) →</a></div></article>
     <article class="qc ask"><div class="qc-top"><span class="qc-n">?</span><span class="qc-tag">Your question</span></div><h3>Not here? Ask it.</h3><p>Answers go into the next Monday Moves card or Field Atlas issue — and onto this page.</p><div class="qc-links"><a href="mailto:rdaniel@laurelschools.org?subject=EL%20question%20for%20the%20Q%26A">Email a question →</a><a href="#contact">Contact →</a></div></article>
   </div>
+  <div class="qa-more"><button type="button" class="btn ghost" id="qaMore" style="min-height:40px">Show all 12 questions ↓</button></div>
   <p class="qa-empty" id="qaEmpty" hidden>No questions match that — try another word, or <a href="#contact">send yours</a>.</p>
 </div></section>
 <section class="contact" id="contact"><div class="wrap">
@@ -847,7 +897,7 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
 </div></section>
 
 <button id="totop" type="button" aria-label="Back to top">↑</button>
-<footer>© 2026 Richard A. Daniel · EL Publishing · Many Voices · One Storm</footer>
+<footer>© 2026 Richard A. Daniel · EL Publishing · Many Voices · One Storm<small>Updated October 3, 2026 · Built as a single page, no trackers, no cookies.</small></footer>
 
 <script>
 document.documentElement.classList.add('js');
@@ -941,6 +991,13 @@ try{(function(){
   b.addEventListener('click',function(){var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
     var next=dark?'light':'dark';root.classList.add('theming');root.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}
     setTimeout(function(){root.classList.remove('theming')},500)})})();
+
+// scrollspy: mark the nav link for the section in view
+(function(){var links=Array.from(document.querySelectorAll('.nav ul a[href^="#"]'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);if(!secs.length||!('IntersectionObserver' in window))return;
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current')});var a=links.find(function(l){return l.getAttribute('href')==='#'+e.target.id});if(a){a.setAttribute('aria-current','true');if(matchMedia('(max-width:820px)').matches)a.scrollIntoView({block:'nearest',inline:'center',behavior:reduce?'auto':'smooth'})}}})},{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){so.observe(s)})})();
+// seasonal: Hispanic Heritage Month block is full Sept 1 – Oct 20, compact the rest of the year
+(function(){var h=document.getElementById('hhm');if(!h)return;var n=new Date(),m=n.getMonth(),d=n.getDate();var on=(m===8)||(m===9&&d<=20);if(!on)h.classList.add('offseason')})();
 // stagger cards
 cards0=document.querySelectorAll('#grid .card');cards0.forEach(function(c,i){c.style.animationDelay=(i*70)+'ms'});
 // tilt
@@ -972,7 +1029,11 @@ var cards0;
 (function(){var bs=document.querySelectorAll('.qa-tabs button'),qs=document.querySelectorAll('.qc:not(.ask)'),inp=document.getElementById('qaSearch'),empty=document.getElementById('qaEmpty');if(!bs.length)return;
   var aud='all';function apply(){var q=(inp&&inp.value||'').trim().toLowerCase(),n=0;qs.forEach(function(c){var ok=(aud==='all'||c.dataset.aud===aud);if(ok&&q)ok=c.textContent.toLowerCase().indexOf(q)>-1;c.hidden=!ok;if(ok)n++});if(empty)empty.hidden=n>0}
   bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});aud=b.dataset.aud;apply()})});
-  if(inp)inp.addEventListener('input',apply)})();
+  var more=document.getElementById('qaMore'),grid=document.getElementById('qaGrid');
+  function expand(){if(grid)grid.classList.remove('collapsed');if(more)more.style.display='none'}
+  if(more)more.addEventListener('click',expand);
+  bs.forEach(function(b){b.addEventListener('click',function(){if(b.dataset.aud!=='all')expand()})});
+  if(inp)inp.addEventListener('input',function(){if(inp.value)expand();apply()})})();
 // lesson tabs
 var tabs=document.querySelectorAll('.ls-tabs [role=tab]'),panels=document.querySelectorAll('.ls-panel');
 tabs.forEach(function(t){t.addEventListener('click',function(){
