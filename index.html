@@ -69,55 +69,57 @@
 /* Monday Move of the week */
 .mm{margin-top:2rem;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:0;border:1px solid var(--line);background:var(--surface)}
 .mm-main{padding:26px 28px;border-left:5px solid var(--gold)}
-.mm-side{padding:26px 24px;background:var(--navy);color:var(--navy-ink);display:flex;flex-direction:column;gap:.8rem;justify-content:center}
+.mm-side{padding:26px 24px;background:var(--navy);color:var(--navy-ink);border-left:1px solid var(--line);display:flex;flex-direction:column;gap:.8rem;justify-content:center}
 .mm-wk{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .mm-wk .pulse{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(201,162,39,.6);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,162,39,.6)}70%{box-shadow:0 0 0 10px rgba(201,162,39,0)}100%{box-shadow:0 0 0 0 rgba(201,162,39,0)}}
-.mm h3{font-family:var(--display);font-size:1.7rem;font-weight:500;margin:.4rem 0 .1rem;line-height:1.15}
+.mm h3{font-family:var(--display);font-size:1.7rem;font-weight:500;margin:.4rem 0 .1rem;line-height:1.15;color:var(--fg)}
 .mm .es{font-family:var(--display);font-style:italic;color:var(--muted);font-size:1.05rem}
 .mm .tag{margin:.6rem 0 .9rem;font-weight:600}
-.mm p{font-size:.95rem;color:var(--ink);margin:0 0 .6rem}
+.mm p{font-size:.95rem;color:var(--fg);margin:0 0 .6rem}
 .mm p.how{color:var(--muted);font-size:.9rem}
 .mm-side b{font-family:var(--display);font-size:2.8rem;font-weight:500;color:var(--gold);line-height:1}
 .mm-side small{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
 .mm-side .nxt{font-size:.88rem;opacity:.9;border-top:1px solid rgba(255,255,255,.18);padding-top:.8rem}
 .mm-side .nxt em{font-style:normal;color:var(--gold)}
 .mm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:.4rem}
-.mm-actions .btn.ghost{color:var(--navy)}
+.mm-actions .btn.ghost{color:var(--fg)}
 @media (max-width:800px){.mm{grid-template-columns:1fr}.mm-main{padding:20px}}
 /* Lane finder quiz */
 .lq{margin-top:2rem;border:1px solid var(--line);background:var(--surface);padding:26px 28px;border-top:3px solid var(--gold)}
 .lq-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
-.lq h3{font-family:var(--display);font-size:1.5rem;font-weight:500;margin:0}
+.lq h3{font-family:var(--display);font-size:1.5rem;font-weight:500;margin:0;color:var(--fg)}
 .lq .prog{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .lq-bar{height:3px;background:var(--line);margin:14px 0 18px;position:relative}
 .lq-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0;transition:width .4s}
 .lq-q{font-size:1.05rem;font-weight:600;margin:0 0 .9rem}
 .lq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.lq-opts button{text-align:left;padding:12px 14px;border:1px solid var(--line);background:#fff;font:inherit;font-size:.9rem;cursor:pointer;transition:border-color .15s,transform .15s,background .15s}
-.lq-opts button:hover{border-color:var(--gold);transform:translateY(-2px);background:#fffdf5}
+.lq-opts button{text-align:left;padding:12px 14px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:.9rem;cursor:pointer;transition:border-color .15s,transform .15s,background .15s}
+.lq-opts button:hover{border-color:var(--gold);transform:translateY(-2px);background:var(--gold-soft,#fffdf5)}
 .lq-res{display:none;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start}
 .lq-res.show{display:grid}
-.lq-res .badge{background:var(--navy);color:var(--gold);font-family:var(--display);font-size:2.2rem;line-height:1;padding:18px 20px;border-bottom:3px solid var(--gold);min-width:150px;text-align:center}
+.lq-res .badge{background:var(--navy);color:var(--gold);border:1px solid var(--line);font-family:var(--display);font-size:2.2rem;line-height:1;padding:18px 20px;border-bottom:3px solid var(--gold);min-width:150px;text-align:center}
 .lq-res .badge small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-ink);margin-bottom:6px}
-.lq-res h4{font-family:var(--display);font-size:1.35rem;font-weight:500;margin:0 0 .4rem}
+.lq-res h4{font-family:var(--display);font-size:1.35rem;font-weight:500;margin:0 0 .4rem;color:var(--fg)}
 .lq-res p{font-size:.93rem;margin:0 0 .6rem}
 .lq-res .note{font-size:.8rem;color:var(--muted)}
 .lq-meter{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:.2rem 0 .8rem;max-width:420px}
 .lq-meter .seg i{display:block;height:8px;background:var(--line);border-radius:2px}
 .lq-meter .seg.on i{background:var(--gold)}
 .lq-meter .seg span{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.lq-meter .seg.on span{color:var(--navy);font-weight:700}
-.lq-res .edge{font-size:.88rem;color:var(--navy);background:var(--gold-l,#f3e6b8);padding:8px 12px;border-left:3px solid var(--gold)}
+.lq-meter .seg.on span{color:var(--fg);font-weight:700}
+.lq-res .edge{font-size:.88rem;color:var(--fg);background:var(--gold-soft,#f3e6b8);padding:8px 12px;border-left:3px solid var(--gold)}
 .lq-res .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:.6rem}
-.lq-res .acts .btn.ghost{color:var(--navy)}
+.lq-res .acts .btn.ghost{color:var(--fg);background:transparent;cursor:pointer;font:inherit;font-size:.9rem}
 @media (max-width:700px){.lq{padding:20px}.lq-opts{grid-template-columns:1fr}.lq-res{grid-template-columns:1fr}}
 
 .hubcats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:.4rem}
 .hubcats a{display:block;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
 .hubcats a:hover{transform:translateY(-3px);border-color:var(--gold)}
-.hubcats b{display:block;font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
+.hubcats b{display:block;font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--fg);margin-bottom:.3rem}
 .hubcats span{font-size:.85rem;color:var(--muted)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lq-opts button{background:var(--surface)}:root:not([data-theme="light"]) .lq-opts button:hover{background:var(--gold-soft)}}
+:root[data-theme="dark"] .lq-opts button{background:var(--surface)}
 </style>
 <style>
 /* Layout: navy masthead with portrait, then a wide-margin editorial column; gold used only for rules, eyebrows and the live counters. */
