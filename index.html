@@ -213,7 +213,11 @@ html.theming,html.theming *{transition:background-color .45s ease,color .45s eas
 .qc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:.3rem}
 .qc-links a{font-size:.82rem;font-weight:600;text-decoration:none;color:var(--navy);border:1px solid var(--gold);padding:7px 12px;border-radius:999px;background:var(--gold-soft,#fff);min-height:36px;display:inline-flex;align-items:center}
 .qc-links a:hover{background:var(--gold);color:#1B1F2E}
-.qc.ask{background:var(--navy);color:var(--navy-ink);border-color:var(--gold)}
+.qc.ask{background:var(--navy);color:var(--navy-ink);border-color:var(--gold);grid-column:1/-1;align-items:center;text-align:center;padding:28px 24px}
+.qc.ask .qc-top{justify-content:center;gap:14px}
+.qc.ask h3{font-size:1.5rem}
+.qc.ask p{max-width:52ch}
+.qc.ask .qc-links{justify-content:center}
 .qc.ask h3{color:#fff}.qc.ask p{color:#cfd3e6}.qc.ask .qc-tag{color:var(--gold)}
 .qc.ask .qc-links a{color:#fff;background:transparent;border-color:var(--gold)}.qc.ask .qc-links a:hover{background:var(--gold);color:#1B1F2E}
 .qa-empty{margin-top:1rem;color:var(--muted)}
