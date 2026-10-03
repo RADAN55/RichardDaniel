@@ -529,6 +529,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 /* Q&A: show six, expand */
 .qa-grid.collapsed .qc:nth-child(n+7):not(.ask){display:none}
 .qa-more{margin-top:1rem;display:flex;justify-content:center}
+.qa-more .btn{color:var(--fg);background:var(--surface);border:1.5px solid var(--navy);font-weight:600;cursor:pointer;font:inherit;padding:.6rem 1.3rem}
+.qa-more .btn:hover{background:var(--navy);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qa-more .btn{border-color:var(--gold);color:var(--fg)}}
+:root[data-theme="dark"] .qa-more .btn{border-color:var(--gold)}
 footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 </style>
 <script type="application/ld+json">
