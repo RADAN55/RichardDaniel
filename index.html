@@ -538,6 +538,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qa-more .btn{border-color:var(--gold);color:var(--fg)}}
 :root[data-theme="dark"] .qa-more .btn{border-color:var(--gold)}
 footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
+
+.voices{grid-template-columns:repeat(3,minmax(0,1fr))}
+.voice{padding:0;overflow:hidden;gap:0}
+.voice-img{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--navy);border-bottom:3px solid var(--gold)}
+.voice-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .3s;filter:saturate(.9)}
+.voice:hover .voice-img img{transform:scale(1.05);filter:saturate(1)}
+.voice q{display:block;padding:16px 18px 6px;position:relative}
+.voice q::before{content:"“";position:absolute;left:8px;top:2px;font-family:var(--display);font-size:2.6rem;color:var(--gold);opacity:.55;line-height:1}
+.voice q{quotes:none;padding-left:30px}
+.voice cite{padding:0 18px 16px 30px}
+.voice[data-aud="award"] .voice-img img{object-position:center 45%}
+.voice[data-aud="admin"] .voice-img img{object-position:left center}
+.voice[data-aud="colleague"] .voice-img img{object-position:center 30%}
+.voice[data-aud="student"]:nth-child(3) .voice-img,.voice[data-aud="admin"] .voice-img{background:#fff}
+@media (max-width:980px){.voices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.voices{grid-template-columns:1fr}}
+.js .rv .voice{opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in .voice{opacity:1;transform:none}
+.js .rv.in .voice:nth-child(2){transition-delay:.08s}.js .rv.in .voice:nth-child(3){transition-delay:.16s}.js .rv.in .voice:nth-child(4){transition-delay:.24s}.js .rv.in .voice:nth-child(5){transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.js .rv .voice{opacity:1;transform:none;transition:none}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -558,6 +578,7 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
     <li><a href="#lesson">Sample Lesson</a></li>
     <li><a href="#tech">Tech Tools</a></li>
     <li><a href="#hhm">Heritage Month</a></li>
+    <li><a href="#voices">Voices</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#qa">Q&amp;A</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -835,13 +856,16 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 </div></section>
 
 
-<section id="voices"><div class="wrap rv">
+<section id="voices" class="has"><div class="wrap rv">
   <p class="eyebrow">Voices</p>
-  <h2 style="font-size:2rem;font-weight:500">What colleagues and students say.</h2>
+  <h2 style="font-size:2rem;font-weight:500">In their own handwriting.</h2>
+  <p class="lead">Notes, cards and observations I've kept — from students, colleagues and administrators. Tap any one to see the original.</p>
   <div class="voices">
-    <!-- Add real quotes here, then add class="has" to <section id="voices"> to show the section.
-    <figure class="voice"><q>Quote in English.</q><q class="es">Cita en español (optional).</q><cite><b>Name</b>Role · School</cite></figure>
-    -->
+    <figure class="voice" data-aud="admin"><a class="voice-img" href="voices/admin.jpg" target="_blank" rel="noopener"><img src="voices/admin.jpg" alt="Administrator's final comment on a classroom observation: 6th block observation — WONDERFUL INSTRUCTION!!!" loading="lazy" decoding="async"></a><q>WONDERFUL INSTRUCTION!!!</q><cite><b>Administrator</b>Final comment · formal classroom observation, 6th block</cite></figure>
+    <figure class="voice" data-aud="colleague"><a class="voice-img" href="voices/card.jpg" target="_blank" rel="noopener"><img src="voices/card.jpg" alt="Handwritten thank-you card: I appreciate everything you have taught me, but also for the generous way you share your time and talents with others. Thank you." loading="lazy" decoding="async"></a><q>I appreciate everything you have taught me… but also for the generous way you share your time and talents with others.</q><cite><b>A colleague</b>Handwritten thank-you card</cite></figure>
+    <figure class="voice" data-aud="student"><a class="voice-img" href="voices/letter.jpg" target="_blank" rel="noopener"><img src="voices/letter.jpg" alt="Handwritten student letter: Dear Mr. Daniel, thank you for an excellent class. I learned a lot in your class. Our time in this class made the learning experience engaging for everyone. I will always remember you." loading="lazy" decoding="async"></a><q>Thank you for an excellent class. I learned a lot… our time in this class made the learning experience engaging for everyone. I will always remember you.</q><cite><b>A student</b>End-of-year letter</cite></figure>
+    <figure class="voice" data-aud="student"><a class="voice-img" href="voices/leaf.jpg" target="_blank" rel="noopener"><img src="voices/leaf.jpg" alt="Student note on a paper leaf: Mr. Daniel, you are a creative teacher!" loading="lazy" decoding="async"></a><q>Mr. Daniel, you are a creative teacher!</q><cite><b>A student</b>Note on a paper leaf</cite></figure>
+    <figure class="voice" data-aud="award"><a class="voice-img" href="voices/tireless.jpg" target="_blank" rel="noopener"><img src="voices/tireless.jpg" alt="Gold-painted tire award reading Tireless Teacher with a yellow jacket mascot" loading="lazy" decoding="async"></a><q>Tireless Teacher</q><cite><b>School award</b>A gold-painted tire, passed to the teacher who never stops</cite></figure>
   </div>
 </div></section>
 <section id="journey"><div class="wrap rv">
