@@ -103,6 +103,12 @@
 .lq-res h4{font-family:var(--display);font-size:1.35rem;font-weight:500;margin:0 0 .4rem}
 .lq-res p{font-size:.93rem;margin:0 0 .6rem}
 .lq-res .note{font-size:.8rem;color:var(--muted)}
+.lq-meter{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:.2rem 0 .8rem;max-width:420px}
+.lq-meter .seg i{display:block;height:8px;background:var(--line);border-radius:2px}
+.lq-meter .seg.on i{background:var(--gold)}
+.lq-meter .seg span{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.lq-meter .seg.on span{color:var(--navy);font-weight:700}
+.lq-res .edge{font-size:.88rem;color:var(--navy);background:var(--gold-l,#f3e6b8);padding:8px 12px;border-left:3px solid var(--gold)}
 .lq-res .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:.6rem}
 .lq-res .acts .btn.ghost{color:var(--navy)}
 @media (max-width:700px){.lq{padding:20px}.lq-opts{grid-template-columns:1fr}.lq-res{grid-template-columns:1fr}}
@@ -459,7 +465,9 @@ footer{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:ce
       <div class="badge"><small>Lane</small><span id="lqLane"></span></div>
       <div>
         <h4 id="lqTitle"></h4>
+        <div class="lq-meter" id="lqMeter" aria-hidden="true"></div>
         <p id="lqDesc"></p>
+        <p class="edge" id="lqEdge" style="display:none"></p>
         <p id="lqMove"></p>
         <div class="acts"><a class="btn solid" id="lqLink" href="#" target="_blank" rel="noopener">Open the matching resource →</a><button type="button" class="btn ghost" id="lqAgain">Try another student</button></div>
         <p class="note">A planning lens, not a placement decision — ELPA21 scores and the Language Service Plan decide placement.</p>
@@ -711,13 +719,13 @@ var cards0;
   T('mmWeek','Week '+w);T('mmQ','· '+q);T('mmTitle',m.en);T('mmEs',m.es);T('mmTag',m.tag);T('mmWhy',m.why);T('mmHow',m.how+(m.how.slice(-1)==='.'?'':'…'));T('mmNum',w);T('mmNext',nx.en);
   var l=document.getElementById('mmLink');if(l)l.href='https://radan55.github.io/mselablueprintinfo01/monday-moves.html#mv-'+w;
 })();
-// Lane finder
+// Lane finder (weighted: ELPA21 level counts double; score 0–15 maps to four lanes)
 (function(){
   var Q=[
-   {q:'How long has the student been learning in English-medium schools?',o:[['Under six months, or just enrolled',0],['Six months to about two years',1],['Two to four years',2],['Four years or more',3]]},
-   {q:'What was the most recent ELPA21 overall level?',o:[['Not yet tested, or Level 1',0],['Level 2',1],['Level 3',2],['Level 4 or 5',3]]},
-   {q:'When you ask a question in class, the student usually…',o:[['Answers with a word, a gesture, or in Spanish',0],['Gives a short phrase, often with a sentence frame',1],['Gives a full sentence with some errors',2],['Explains and justifies, close to grade-level peers',3]]},
-   {q:'With a grade-level text, the student…',o:[['Cannot yet decode English words',0],['Reads a tiered version with visuals and a glossary',1],['Reads the real text once vocabulary is pre-taught',2],['Reads independently; academic vocabulary is the gap',3]]}
+   {q:'How long has the student been learning in English-medium schools?',w:1,o:[['Under six months, or just enrolled',0],['Six months to about two years',1],['Two to four years',2],['Four years or more',3]]},
+   {q:'What was the most recent ELPA21 overall level?',w:2,o:[['Not yet tested, or Level 1',0],['Level 2',1],['Level 3, or Level 4 with a domain still at 3',2],['Level 4 in every domain, or exited and monitored',3]]},
+   {q:'When you ask a question in class, the student usually…',w:1,o:[['Answers with a word, a gesture, or in Spanish',0],['Gives a short phrase, often with a sentence frame',1],['Gives a full sentence with some errors',2],['Explains and justifies, close to grade-level peers',3]]},
+   {q:'With a grade-level text, the student…',w:1,o:[['Cannot yet decode English words',0],['Reads a tiered version with visuals and a glossary',1],['Reads the real text once vocabulary is pre-taught',2],['Reads independently; academic vocabulary is the gap',3]]}
   ];
   var L=[
    {n:'Newcomer',t:'Lane 1 · Newcomer',d:'First months of English. Survival language, visuals, sentence frames, and a guaranteed small-group slot with the teacher every day. Spanish is a bridge, not a detour.',mv:'Start with Monday Move 1: post and say the language goal, then give this student a frame to meet it.',url:'https://radan55.github.io/el-field-guide/',lbl:'Open the EL Field Guide →'},
@@ -725,16 +733,20 @@ var cards0;
    {n:'Progressing',t:'Lane 3 · Progressing',d:'Levels 3–4. Academic language across content areas with gradual release: paragraph and essay work, discrete editing, and reading that mirrors the ELPT.',mv:'Writing and reading cut scores are the highest on the 9–12 ELPA21 — front-load paragraph work and editing routines.',url:'https://radan55.github.io/elpa21-reading-studio/',lbl:'Open the ELPA21 Reading Studio →'},
    {n:'Challenge',t:'Lane 4 · Challenge',d:'Near-exit. Grade-level text without the tiered version, unframed extended writing, and the academic vocabulary that separates Level 4 from Level 5.',mv:'Hold the standard constant and remove scaffolds one at a time; this student should be reading the MS ELA blueprint texts directly.',url:'https://radan55.github.io/mselablueprintinfo01/',lbl:'Open The Blueprint / El Plano →'}
   ];
-  var i=0,sc=[0,0,0,0],body=document.getElementById('lqBody'),res=document.getElementById('lqRes');
+  var BANDS=[[0,3],[4,7],[8,11],[12,15]];
+  var i=0,score=0,body=document.getElementById('lqBody'),res=document.getElementById('lqRes');
   if(!body)return;
   function render(){document.getElementById('lqProg').textContent='Question '+(i+1)+' of '+Q.length;document.getElementById('lqBar').style.width=(i/Q.length*100)+'%';
     document.getElementById('lqQ').textContent=Q[i].q;var o=document.getElementById('lqOpts');o.innerHTML='';
-    Q[i].o.forEach(function(op){var b=document.createElement('button');b.type='button';b.textContent=op[0];b.addEventListener('click',function(){sc[op[1]]++;i++;if(i<Q.length)render();else finish()});o.appendChild(b)})}
-  function finish(){var best=0;for(var k=1;k<4;k++)if(sc[k]>sc[best])best=k;var r=L[best];
-    document.getElementById('lqProg').textContent='Result';document.getElementById('lqBar').style.width='100%';body.style.display='none';
+    Q[i].o.forEach(function(op){var b=document.createElement('button');b.type='button';b.textContent=op[0];b.addEventListener('click',function(){score+=op[1]*Q[i].w;i++;if(i<Q.length)render();else finish()});o.appendChild(b)})}
+  function finish(){var best=0;for(var k=0;k<4;k++)if(score>=BANDS[k][0]&&score<=BANDS[k][1])best=k;var r=L[best];
+    var edge='';if(best<3&&score===BANDS[best][1])edge='Borderline with '+L[best+1].n+' — plan the next scaffold to remove.';if(best>0&&score===BANDS[best][0])edge='Borderline with '+L[best-1].n+' — keep that lane\'s supports on hand.';
+    document.getElementById('lqProg').textContent='Result · '+score+' of 15';document.getElementById('lqBar').style.width='100%';body.style.display='none';
     document.getElementById('lqLane').textContent=r.n;document.getElementById('lqTitle').textContent=r.t;document.getElementById('lqDesc').textContent=r.d;document.getElementById('lqMove').textContent=r.mv;
+    var m=document.getElementById('lqMeter');m.innerHTML='';L.forEach(function(x,k){var d=document.createElement('div');d.className='seg'+(k===best?' on':'');d.innerHTML='<i></i><span>'+x.n+'</span>';m.appendChild(d)});
+    var e=document.getElementById('lqEdge');e.textContent=edge;e.style.display=edge?'':'none';
     var a=document.getElementById('lqLink');a.href=r.url;a.textContent=r.lbl;res.classList.add('show')}
-  document.getElementById('lqAgain').addEventListener('click',function(){i=0;sc=[0,0,0,0];res.classList.remove('show');body.style.display='';render()});
+  document.getElementById('lqAgain').addEventListener('click',function(){i=0;score=0;res.classList.remove('show');body.style.display='';render()});
   render();
 })();
 // lesson tabs
