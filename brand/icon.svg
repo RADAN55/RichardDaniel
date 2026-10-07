@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="EL Publishing">
+  <rect width="100" height="100" rx="20" fill="#1E2761"/>
+  <g fill="none" stroke-linecap="round" transform="translate(7.5 7.5) scale(0.85)">
+    <path d="M50 10 A40 40 0 1 1 10 50" stroke="#FFFFFF" stroke-width="6" opacity="0.9"/>
+    <path d="M74.2 64 A28 28 0 1 1 32 28.6" stroke="#C9A227" stroke-width="6"/>
+  </g>
+  <text x="50" y="63" text-anchor="middle" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-weight="900" font-size="34" letter-spacing="-1.5" fill="#FFFFFF">EL</text>
+</svg>

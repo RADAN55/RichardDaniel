@@ -15,11 +15,31 @@
 <meta name="twitter:image" content="https://radan55.github.io/RichardDaniel/og.jpg">
 <link rel="canonical" href="https://radan55.github.io/RichardDaniel/">
 <meta name="theme-color" content="#1E2761">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231E2761'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23C9A227'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="brand/icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="brand/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="brand/icon-180.png">
 <title>Richard A. Daniel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+/* --- EL Publishing logo --- */
+.elmark{display:inline-block;width:1em;height:1em;flex-shrink:0;color:currentColor}
+.brand .elmark{font-size:28px;margin-right:10px;color:var(--navy-ink)}
+.hub-mark{border:0;width:64px;height:64px;color:var(--navy-ink)}
+.hub-mark .elmark{font-size:64px}
+.lockup{display:flex;align-items:center;gap:18px;margin:.2rem 0 .6rem}
+.lockup .elmark{font-size:72px;color:var(--navy)}
+.lockup .wm{display:flex;align-items:baseline;gap:.3em;font-family:var(--display);line-height:1;color:var(--navy)}
+.lockup .wm b{font-weight:900;font-size:2.6rem;letter-spacing:-.03em}
+.lockup .wm i{font-weight:500;font-size:1.7rem;letter-spacing:-.01em}
+.lockup .tg{font-family:var(--body);font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#8A6E12;margin-top:.5rem;display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lockup .elmark,:root:not([data-theme="light"]) .lockup .wm{color:var(--navy-ink)}:root:not([data-theme="light"]) .lockup .tg{color:var(--gold)}}
+:root[data-theme="dark"] .lockup .elmark,:root[data-theme="dark"] .lockup .wm{color:var(--navy-ink)}:root[data-theme="dark"] .lockup .tg{color:var(--gold)}
+footer .elmark{font-size:40px;display:block;margin:0 auto 12px;color:var(--navy)}
+:root[data-theme="dark"] footer .elmark{color:var(--navy-ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .elmark{color:var(--navy-ink)}}
+@media (max-width:560px){.lockup .elmark{font-size:52px}.lockup .wm b{font-size:2rem}.lockup .wm i{font-size:1.3rem}.brand .elmark{font-size:24px;margin-right:8px}}
 /* --- EL Publishing upgrades --- */
 .pubstats{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);background:var(--line);margin:1.2rem 0 1.6rem}
 .pubstats div{flex:1 1 120px;background:var(--surface);padding:12px 14px}
@@ -579,15 +599,16 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Person","@id":"https://radan55.github.io/RichardDaniel/#person","name":"Richard A. Daniel","honorificSuffix":"M.Ed.","jobTitle":"ENL/EL Specialist","worksFor":{"@type":"EducationalOrganization","name":"Laurel High School","address":{"@type":"PostalAddress","addressLocality":"Laurel","addressRegion":"MS","addressCountry":"US"}},"knowsLanguage":["en","es"],"url":"https://radan55.github.io/RichardDaniel/","image":"https://radan55.github.io/RichardDaniel/og.jpg","email":"mailto:rdaniel@laurelschools.org","knowsAbout":["English learners","ELPA21","Title III","SIOP","Mississippi EL compliance","Science of Reading"]},
- {"@type":"WebSite","@id":"https://radan55.github.io/RichardDaniel/#site","url":"https://radan55.github.io/RichardDaniel/","name":"Richard A. Daniel · EL Publishing","publisher":{"@id":"https://radan55.github.io/RichardDaniel/#person"},"inLanguage":["en","es"]}
+ {"@type":"WebSite","@id":"https://radan55.github.io/RichardDaniel/#site","url":"https://radan55.github.io/RichardDaniel/","name":"Richard A. Daniel · EL Publishing","image":"https://radan55.github.io/RichardDaniel/brand/icon-512.png","publisher":{"@id":"https://radan55.github.io/RichardDaniel/#person"},"inLanguage":["en","es"]}
 ]}
 </script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="el-storm" viewBox="0 0 100 100" fill="none" stroke-linecap="round"><path d="M50 10 A40 40 0 1 1 10 50" stroke="currentColor" stroke-width="7"/><path d="M74.2 64 A28 28 0 1 1 32 28.6" stroke="var(--gold)" stroke-width="7"/><path d="M37 44 A16 16 0 1 1 55 66" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="5" fill="var(--gold)"/></symbol></svg>
 <div id="prog" aria-hidden="true"></div>
 <a class="skip" href="#about">Skip to content</a>
 <nav class="nav"><div class="wrap">
-  <a class="brand" href="#top">Richard A. Daniel</a>
+  <a class="brand" href="#top"><svg class="elmark" aria-hidden="true"><use href="#el-storm"/></svg>Richard A. Daniel</a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
@@ -702,10 +723,10 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 
 <section id="work"><div class="wrap rv">
   <p class="eyebrow">Selected work</p>
-  <h2 style="font-size:2rem;font-weight:500">EL Publishing</h2>
+  <h2 class="lockup"><svg class="elmark" role="img" aria-label="EL Publishing storm mark"><use href="#el-storm"/></svg><span><span class="wm"><b>EL</b><i>Publishing</i></span><span class="tg">Many Voices · One Storm</span></span></h2>
   <p class="lead">Free, open resources built for Mississippi classrooms and usable anywhere. Every link opens a live site.</p>
   <a class="hub" href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener">
-    <div class="hub-mark" aria-hidden="true">EL</div>
+    <div class="hub-mark" aria-hidden="true"><svg class="elmark" aria-hidden="true"><use href="#el-storm"/></svg></div>
     <div class="hub-body">
       <span class="k">The front door · everything in one place</span>
       <h3>EL Publishing Hub</h3>
@@ -882,7 +903,7 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
 </div></section>
 
 <button id="totop" type="button" aria-label="Back to top">↑</button>
-<footer>© 2026 Richard A. Daniel · EL Publishing · Many Voices · One Storm<small>Updated October 3, 2026 · Built as a single page, no trackers, no cookies.</small></footer>
+<footer><svg class="elmark" aria-hidden="true"><use href="#el-storm"/></svg>© 2026 Richard A. Daniel · EL Publishing · Many Voices · One Storm<small>Updated October 7, 2026 · Built as a single page, no trackers, no cookies.</small></footer>
 
 <script>
 document.documentElement.classList.add('js');
