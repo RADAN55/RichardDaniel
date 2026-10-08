@@ -278,6 +278,49 @@ html.theming,html.theming *{transition:background-color .45s ease,color .45s eas
 #partner .pacts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 #partner .btn.ghost{color:var(--fg)}
 @media (max-width:860px){#partner .pgrid{grid-template-columns:1fr}}
+
+/* Today bar (date-aware opener) */
+.today{background:var(--navy);color:var(--navy-ink);border-bottom:1px solid rgba(201,162,39,.35)}
+.today .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-height:44px;padding:10px 20px 44px}
+.today .td{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.today ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.86rem}
+.today li{display:flex;align-items:center;gap:7px}
+.today li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.today li b{font-weight:600}
+.today li small{opacity:.75}
+/* From the hub this week */
+#fresh .fresh{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}
+#fresh .fc{background:var(--surface);padding:18px 18px 16px;display:flex;flex-direction:column;gap:.45rem;text-decoration:none;color:inherit;transition:background .2s}
+#fresh .fc:hover{background:var(--gold-soft)}
+#fresh .fc .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+#fresh .fc h3{margin:0;font-size:1.05rem;font-weight:500;line-height:1.25}
+#fresh .fc.feat h3{font-size:1.35rem}
+#fresh .fc p{margin:0;font-size:.86rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#fresh .fc .go{margin-top:auto;padding-top:.4rem;font-size:.84rem;font-weight:600;color:var(--gold)}
+#fresh .fc img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border:1px solid var(--line);background:var(--navy)}
+#fresh .pb{text-decoration:none;color:inherit;margin-top:18px;border:1px solid var(--line);border-left:4px solid var(--gold);background:var(--surface);padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+#fresh .pb .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 .3rem}
+#fresh .pb p{margin:0;font-size:.92rem}
+#fresh .pb .k span{color:var(--muted);text-transform:none;letter-spacing:0;margin-left:8px}
+#fresh .live{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:10px}
+#fresh .live i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3BB273;margin-right:6px;vertical-align:middle;animation:livepulse 2s infinite}
+@keyframes livepulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (max-width:860px){#fresh .fresh{grid-template-columns:1fr 1fr}#fresh .fc.feat{grid-column:1/-1}#fresh .pb{grid-template-columns:1fr}}
+@media (max-width:520px){#fresh .fresh{grid-template-columns:1fr}}
+/* Newsletter */
+.news{background:var(--navy);color:var(--navy-ink);border-top:1px solid rgba(201,162,39,.35);border-bottom:1px solid rgba(201,162,39,.35)}
+.news .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center;padding-block:40px}
+.news h2{margin:.2rem 0 .5rem;font-size:1.9rem;font-weight:500;line-height:1.1}
+.news p{margin:0;opacity:.9;max-width:50ch}
+.news form{display:flex;gap:8px;flex-wrap:wrap}
+.news input{flex:1 1 220px;min-width:0;padding:.8rem 1rem;border:1px solid rgba(243,241,232,.35);background:rgba(255,255,255,.06);color:var(--navy-ink);font:inherit;font-size:.95rem}
+.news input::placeholder{color:rgba(243,241,232,.55)}
+.news input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.news .btn.solid{flex:none}
+.news small{display:block;margin-top:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;opacity:.7}
+.news .ok{margin-top:10px;font-size:.9rem;color:var(--gold)}
+@media (max-width:760px){.news .wrap{grid-template-columns:1fr}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 <style>
 /* Layout: navy masthead with portrait, then a wide-margin editorial column; gold used only for rules, eyebrows and the live counters. */
@@ -618,6 +661,7 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
     <li><a href="#hhm">Heritage Month</a></li>
     <li><a href="#voices">Voices</a></li>
     <li><a href="#journey">Journey</a></li>
+    <li><a href="#fresh">This week</a></li>
     <li><a href="#qa">Q&amp;A</a></li>
     <li><a href="#partner">Partner</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -639,6 +683,10 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
   <div class="pwrap"><img class="portrait" id="portrait" alt="Richard A. Daniel at his desk with EL Publishing titles" src=""></div>
 </div></header>
 <div class="ticker" aria-hidden="true"><div><span>Title III</span>·<span>ELPA21</span>·<span>Castañeda</span>·<span>MS ELP Standards</span>·<span>MTAM</span>·<span>SIOP</span>·<span>Science of Reading</span>·<span>Many Voices · One Storm</span>·<span>Every teacher is a language teacher</span>·<span>Title III</span>·<span>ELPA21</span>·<span>Castañeda</span>·<span>MS ELP Standards</span>·<span>MTAM</span>·<span>SIOP</span>·<span>Science of Reading</span>·<span>Many Voices · One Storm</span>·<span>Every teacher is a language teacher</span>·</div></div>
+
+<div class="today" id="today" aria-label="Today in EL">
+  <div class="wrap"><span class="td" id="tdDate">Today</span><ul id="tdList"><li><b>Mississippi EL · 2026–27</b></li></ul></div>
+</div>
 
 <div class="wrap">
   <div class="stats" aria-label="At a glance">
@@ -862,6 +910,40 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
   <p class="qa-empty" id="qaEmpty" hidden>No questions match that — try another word, or <a href="#contact">send yours</a>.</p>
 </div></section>
 
+<section id="fresh"><div class="wrap rv">
+  <p class="eyebrow">From the hub this week</p>
+  <h2>What's new at EL Publishing.</h2>
+  <p class="lead">Pulled live from the <a href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener">EL Publishing Hub</a> each time this page loads — the featured resource, this week's pick, and the latest policy brief.</p>
+  <div class="fresh" id="freshGrid">
+    <a class="fc feat" href="https://radan55.github.io/everyteacher/tech-radar.html" target="_blank" rel="noopener"><span class="k">Featured · updated weekly</span><h3>EL Tech Radar</h3><p>New tools for English learners, verified and sorted by lane.</p><span class="go">Open →</span></a>
+    <a class="fc" href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener"><span class="k">Resource of the week</span><h3>EL Publishing Hub</h3><p>Free resources for anyone who teaches or leads English learners.</p><span class="go">Open →</span></a>
+    <a class="fc" href="https://radan55.github.io/everyteacher/el-bridge.html" target="_blank" rel="noopener"><span class="k">Also this week</span><h3>EL Bridge Mississippi</h3><p>Pick a standard, get four lanes.</p><span class="go">Open →</span></a>
+    <a class="fc" href="https://radan55.github.io/everyteacher/newcomer-guide.html" target="_blank" rel="noopener"><span class="k">Also this week</span><h3>Newcomer Guide</h3><p>Your guide to school in the U.S.</p><span class="go">Open →</span></a>
+  </div>
+  <a class="pb" id="pbCard" href="https://radan55.github.io/everyteacher/policy-brief.html" target="_blank" rel="noopener">
+    <div><p class="k">Mississippi EL Policy Brief <span id="pbLabel">latest issue</span></p><p id="pbLead">What changed, what it means, and what to do by when — one page for principals and coordinators.</p></div>
+    <span class="btn solid">Read the brief →</span>
+  </a>
+  <p class="live" id="freshLive"><i aria-hidden="true"></i>Live from radan55.github.io/everyteacher</p>
+</div></section>
+
+<section class="news" id="newsletter"><div class="wrap">
+  <div>
+    <p class="eyebrow">Monday Moves in your inbox</p>
+    <h2>One EL move. Every Monday. Five minutes.</h2>
+    <p>The same card Laurel's faculty gets — one classroom move for English learners, in English and Spanish, with the why behind it. Plus each new hub resource and policy brief the day it posts. No spam, unsubscribe anytime.</p>
+  </div>
+  <div>
+    <form id="newsForm" novalidate>
+      <label class="sr-only" for="newsEmail">Email address</label>
+      <input id="newsEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@school.org" required>
+      <button class="btn solid" type="submit">Subscribe</button>
+    </form>
+    <p class="ok" id="newsOk" hidden></p>
+    <small>Free · Teachers, coordinators and families welcome · Written by a working EL specialist</small>
+  </div>
+</div></section>
+
 <section id="partner"><div class="wrap rv">
   <p class="eyebrow">Partnerships</p>
   <h2 style="font-size:2rem;font-weight:500">I build EL resources for schools.</h2>
@@ -1082,6 +1164,83 @@ document.querySelectorAll('.copybtn').forEach(function(btn){btn.addEventListener
   function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy'},1500)}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else fallback();
 })});
+
+// ===== Today bar: date-aware opener (Week N of 36 · windows · observances) =====
+(function(){try{
+  var now=new Date(),d0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  function D(y,m,d){return new Date(y,m-1,d)}
+  function days(a){return Math.round((a-d0)/864e5)}
+  function fmt(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}
+  function weekNow(){var s=new Date(2026,7,3);var w=Math.floor((now-s)/6048e5)+1;
+    if(now>=new Date(2027,0,4))w-=2; if(now>=new Date(2027,3,5))w-=1;
+    if(now>=new Date(2027,7,2)){s=new Date(2027,7,2);w=Math.floor((now-s)/6048e5)+1;if(now>=new Date(2028,0,3))w-=2;if(now>=new Date(2028,3,3))w-=1}
+    return Math.max(1,Math.min(36,w))}
+  var items=[];
+  var w=weekNow();items.push('<li><b>Week '+w+' of 36</b><small>Monday Move cadence</small></li>');
+  // Windows and deadlines (start, end, label, note). Dates: MDE 2026–27 ELPT window; federal CR expiry.
+  var ev=[
+    [D(2027,3,1),D(2027,4,16),'ELPT testing window','Mississippi, grades K–12'],
+    [D(2026,12,11),D(2026,12,11),'Federal continuing resolution expires','Title III funding watch'],
+    [D(2027,1,14),D(2027,1,16),'AMTESOL 2027','Birmingham'],
+    [D(2027,5,15),D(2027,5,15),'NBCT portfolio submission window closes','Components 2–4']
+  ];
+  var shown=0;
+  ev.sort(function(a,b){return a[0]-b[0]}).forEach(function(e){if(shown>=2)return;var s=days(e[0]),f=days(e[1]);
+    if(s<=0&&f>=0){items.push('<li><b>'+e[2]+' is open</b><small>through '+fmt(e[1])+'</small></li>');shown++}
+    else if(s>0&&s<=120){items.push('<li><b>'+e[2]+'</b><small>in '+s+' day'+(s===1?'':'s')+' · '+fmt(e[0])+'</small></li>');shown++}});
+  // Observances (month-day ranges, any year)
+  var obs=[[9,15,10,15,'Hispanic Heritage Month'],[10,1,10,31,'National Principals Month'],[11,1,11,30,'Native American Heritage Month'],[2,1,2,28,'Black History Month'],[2,21,2,21,'International Mother Language Day'],[3,1,3,31,'Women’s History Month'],[4,1,4,30,'National Bilingual/Multilingual Learner Advocacy Month'],[5,1,5,31,'Asian American & Pacific Islander Heritage Month'],[5,4,5,8,'Teacher Appreciation Week']];
+  var y=now.getFullYear();
+  obs.forEach(function(o){var a=D(y,o[0],o[1]),b=D(y,o[2],o[3]);if(d0>=a&&d0<=b&&items.length<4)items.push('<li><b>'+o[4]+'</b></li>')});
+  document.getElementById('tdList').innerHTML=items.join('');
+  document.getElementById('tdDate').textContent=now.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+}catch(e){}})();
+
+// ===== From the hub this week: read the live hub pages (same origin) =====
+(function(){try{
+  var HUB='https://radan55.github.io/everyteacher/';
+  var abs=Math.floor((new Date()-new Date(2026,7,3))/6048e5);
+  function txt(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
+  function clip(t,n){return t.length>n?t.slice(0,n).replace(/\s+\S*$/,'')+'…':t}
+  function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function card(k,h,p,href,img,cls){return '<a class="fc'+(cls?' '+cls:'')+'" href="'+esc(href)+'" target="_blank" rel="noopener">'+(img?'<img src="'+esc(img)+'" alt="" loading="lazy">':'')+'<span class="k">'+esc(k)+'</span><h3>'+esc(h)+'</h3><p>'+esc(p)+'</p><span class="go">Open →</span></a>'}
+  function abs2(href){return /^https?:/.test(href)?href:HUB+href}
+  fetch(HUB+'index.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
+    var doc=new DOMParser().parseFromString(html,'text/html');
+    var cards=[].slice.call(doc.querySelectorAll('section .cards .card'));if(!cards.length)return;
+    var out=[];
+    var f=doc.querySelector('a.feature');
+    if(f)out.push(card(txt(f.querySelector('.feature-k'))||'Featured',txt(f.querySelector('.feature-t')),clip(txt(f.querySelector('.feature-p')),160),abs2(f.getAttribute('href')),null,'feat'));
+    var n=cards.length;
+    [[0,'Resource of the week'],[1,'Also this week'],[2,'Also this week']].forEach(function(x){
+      var c=cards[(((abs+x[0])%n)+n)%n],img=c.querySelector('img.shot');
+      out.push(card(x[1],txt(c.querySelector('h3')),clip(txt(c.querySelector('.card-body p')),120),abs2(c.getAttribute('href')),img?abs2(img.getAttribute('src')):null))});
+    document.getElementById('freshGrid').innerHTML=out.join('');
+    var live=document.getElementById('freshLive');if(live)live.innerHTML='<i aria-hidden="true"></i>Live · '+n+' resources on the hub right now · refreshed '+new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  }).catch(function(){});
+  fetch(HUB+'policy-brief.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
+    var m=/label:"([^"]+)",\s*date:"([^"]+)",\s*lead:"((?:[^"\\]|\\.)*)"/.exec(html);if(!m)return;
+    var L=document.getElementById('pbLabel'),P=document.getElementById('pbLead');
+    if(L)L.textContent=m[1]+' · '+m[2].replace(/^Posted\s+/,'');
+    if(P)P.textContent=m[3].replace(/\\"/g,'"');
+  }).catch(function(){});
+}catch(e){}})();
+
+// ===== Newsletter signup =====
+// To switch to a real list later: create a free Buttondown (or similar) account and set ENDPOINT to its form action,
+// e.g. 'https://buttondown.com/api/emails/embed-subscribe/YOUR-NAME'. Until then, subscriptions arrive by email.
+(function(){try{
+  var ENDPOINT='';
+  var f=document.getElementById('newsForm'),em=document.getElementById('newsEmail'),ok=document.getElementById('newsOk');
+  if(!f)return;
+  f.addEventListener('submit',function(e){e.preventDefault();var v=(em.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){em.focus();em.setAttribute('aria-invalid','true');return}
+    em.removeAttribute('aria-invalid');
+    if(ENDPOINT){var fd=new FormData();fd.append('email',v);fetch(ENDPOINT,{method:'POST',body:fd,mode:'no-cors'}).then(function(){done()}).catch(function(){done()})}
+    else{location.href='mailto:richard.spanishteacher@gmail.com?subject='+encodeURIComponent('Subscribe: Monday Moves')+'&body='+encodeURIComponent('Please add '+v+' to the Monday Moves list.');done()}
+    function done(){ok.hidden=false;ok.textContent='Thanks — you’re on the list. First card arrives Monday.';em.value='';try{localStorage.setItem('mm-subscribed','1')}catch(_){}}
+  });
+}catch(e){}})();
 </script>
 </body>
 </html>
