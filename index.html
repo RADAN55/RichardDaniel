@@ -916,7 +916,7 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
   <p class="lead">Pulled live from the <a href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener">EL Publishing Hub</a> each time this page loads — the featured resource, this week's pick, and the latest policy brief.</p>
   <div class="fresh" id="freshGrid">
     <a class="fc feat" href="https://radan55.github.io/everyteacher/tech-radar.html" target="_blank" rel="noopener"><span class="k">Featured · updated weekly</span><h3>EL Tech Radar</h3><p>New tools for English learners, verified and sorted by lane.</p><span class="go">Open →</span></a>
-    <a class="fc" href="https://radan55.github.io/everyteacher/" target="_blank" rel="noopener"><span class="k">Resource of the week</span><h3>EL Publishing Hub</h3><p>Free resources for anyone who teaches or leads English learners.</p><span class="go">Open →</span></a>
+    <a class="fc" href="https://radan55.github.io/everyteacher/spoken-spanish-english.html" target="_blank" rel="noopener"><span class="k">Resource of the week</span><h3>Spoken Spanish &amp; Spoken English</h3><p>What you'll hear from a Spanish-speaking student, and what to say back. Phrase banks, a correct-now-or-later guide, free PDF.</p><span class="go">Open →</span></a>
     <a class="fc" href="https://radan55.github.io/everyteacher/el-bridge.html" target="_blank" rel="noopener"><span class="k">Also this week</span><h3>EL Bridge Mississippi</h3><p>Pick a standard, get four lanes.</p><span class="go">Open →</span></a>
     <a class="fc" href="https://radan55.github.io/everyteacher/newcomer-guide.html" target="_blank" rel="noopener"><span class="k">Also this week</span><h3>Newcomer Guide</h3><p>Your guide to school in the U.S.</p><span class="go">Open →</span></a>
   </div>
@@ -1212,10 +1212,15 @@ document.querySelectorAll('.copybtn').forEach(function(btn){btn.addEventListener
     var f=doc.querySelector('a.feature');
     if(f)out.push(card(txt(f.querySelector('.feature-k'))||'Featured',txt(f.querySelector('.feature-t')),clip(txt(f.querySelector('.feature-p')),160),abs2(f.getAttribute('href')),null,'feat'));
     var n=cards.length;
+    // A hub card with data-pin-until="YYYY-MM-DD" is the resource of the week until that date (new releases).
+    var pin=cards.filter(function(x){var d=x.getAttribute('data-pin-until');return d&&new Date(d+'T23:59:59')>=new Date()})[0];
     [[0,'Resource of the week'],[1,'Also this week'],[2,'Also this week']].forEach(function(x){
-      var c=cards[(((abs+x[0])%n)+n)%n],img=c.querySelector('img.shot');
+      var c=cards[(((abs+x[0])%n)+n)%n];if(pin){if(x[0]===0)c=pin;else{c=cards[(((abs+x[0]-1)%n)+n)%n];if(c===pin)c=cards[(((abs+x[0])%n)+n)%n]}}
+      var img=c.querySelector('img.shot');
       out.push(card(x[1],txt(c.querySelector('h3')),clip(txt(c.querySelector('.card-body p')),120),abs2(c.getAttribute('href')),img?abs2(img.getAttribute('src')):null))});
     document.getElementById('freshGrid').innerHTML=out.join('');
+    // Today bar: announce a pinned (newly released) hub resource
+    var td=document.getElementById('tdList');if(pin&&td){td.insertAdjacentHTML('afterbegin','<li><b>New on the hub: <a href="'+esc(abs2(pin.getAttribute('href')))+'" target="_blank" rel="noopener" style="color:inherit">'+esc(txt(pin.querySelector('h3')))+'</a></b></li>')}
     var live=document.getElementById('freshLive');if(live)live.innerHTML='<i aria-hidden="true"></i>Live · '+n+' resources on the hub right now · refreshed '+new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'});
   }).catch(function(){});
   fetch(HUB+'policy-brief.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
