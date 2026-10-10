@@ -867,14 +867,14 @@ footer small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
   </a>
   <p class="eyebrow" style="margin-top:2rem">Browse the hub by section</p>
   <div class="hubcats" aria-label="Hub sections">
-    <a href="https://radan55.github.io/everyteacher/#curriculum" target="_blank" rel="noopener"><b>Curriculum &amp; scope</b><span>36-week maps, The Blueprint, the EL Library, Vocabulary Engine, Hispanic Heritage</span></a>
-    <a href="https://radan55.github.io/everyteacher/#tool" target="_blank" rel="noopener"><b>Interactive tools</b><span>ELPA21 Reading Studio, Language Lab, Command Center, Grammar Beats, PD module</span></a>
+    <a href="https://radan55.github.io/everyteacher/all.html?g=elteacher" target="_blank" rel="noopener"><b>The EL teacher's desk</b><span>36-week maps, the sample lesson, LSP Builder, intake, the Blueprint, the EL Library</span></a>
+    <a href="https://radan55.github.io/everyteacher/all.html?g=classroom" target="_blank" rel="noopener"><b>Every classroom teacher</b><span>Sheltered, the EL Assistants, EL Bridge, the Field Guide, sentence frames, quick cards</span></a>
+    <a href="https://radan55.github.io/everyteacher/all.html?g=students" target="_blank" rel="noopener"><b>Students &amp; families</b><span>Storm Lens, English On Your Own, the Newcomer Guide, First 100 Words, Many Voices</span></a>
+    <a href="https://radan55.github.io/everyteacher/all.html?g=district" target="_blank" rel="noopener"><b>District &amp; compliance</b><span>The self-audit, the six-session evaluation course, the calendar, Title III, board brief</span></a>
     <a href="https://radan55.github.io/everyteacher/tech-radar.html" target="_blank" rel="noopener"><b>Tech Radar</b><span>New EL tech tools, verified — one added every week</span></a>
     <a href="https://radan55.github.io/everyteacher/field-notes.html" target="_blank" rel="noopener"><b>Field Notes</b><span>What's new in teaching ELs — eight ideas shaping 2026, tagged by evidence</span></a>
     <a href="https://radan55.github.io/everyteacher/sample-lesson.html" target="_blank" rel="noopener"><b>Sample lesson</b><span>One text, four lanes: the anatomy of a 90-minute block</span></a>
-    <a href="https://radan55.github.io/everyteacher/#magazine" target="_blank" rel="noopener"><b>Magazines</b><span>The Field Atlas for teachers · Many Voices for students</span></a>
-    <a href="https://radan55.github.io/everyteacher/#writing" target="_blank" rel="noopener"><b>Guides &amp; writing</b><span>The EL Field Guide · <em>Making Them Count</em></span></a>
-    <a href="https://radan55.github.io/everyteacher/#packet" target="_blank" rel="noopener"><b>Bulletins &amp; packets</b><span>The Language Bridge · ELPA21 task-practice packets</span></a>
+    <a href="https://radan55.github.io/everyteacher/all.html" target="_blank" rel="noopener"><b>The full index</b><span>All 57 resources in one sortable table — by name, audience and format</span></a>
   </div>
 </div>
 </div>
@@ -1258,60 +1258,73 @@ document.querySelectorAll('.copybtn').forEach(function(btn){btn.addEventListener
 }catch(e){}})();
 
 
-// ===== Now Showing: newest hub releases (cards tagged data-new on the hub, fresh for 21 days) =====
+// ===== Live from the hub =====
+// The hub publishes catalog.json (built by its tools/build.py). Reading that
+// instead of scraping its HTML means a redesign over there cannot break this.
 (function(){try{
   var HUB='https://radan55.github.io/everyteacher/',DAYS=21,now=new Date();
   function txt(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
   function clip(t,n){return t.length>n?t.slice(0,n).replace(/\s+\S*$/,'')+'…':t}
-  function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function abs2(href){return /^https?:/.test(href)?href:HUB+href}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function abs2(h){return /^https?:/.test(h)?h:HUB+h}
   function fmt(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}
-  // animate the static title immediately
   function letters(el){var k=0;el.innerHTML=txt(el).split(' ').map(function(w){return '<span class="wd">'+w.split('').map(function(c){return '<span class="ch" style="animation-delay:'+((k++)*28)+'ms">'+esc(c)+'</span>'}).join('')+'</span>'}).join(' ')}
-  letters(document.getElementById('shTitle'));
-  fetch(HUB+'index.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
-    var doc=new DOMParser().parseFromString(html,'text/html');
-    var cards=[].slice.call(doc.querySelectorAll('section .cards .card[data-new]')).map(function(c){return {el:c,d:new Date(c.getAttribute('data-new')+'T12:00:00')}})
-      .filter(function(x){return !isNaN(x.d)&&(now-x.d)/864e5<=DAYS&&x.d<=now}).sort(function(a,b){return b.d-a.d});
-    if(!cards.length)return;
-    var h=cards[0].el,img=h.querySelector('img.shot'),title=txt(h.querySelector('h3'));
-    var t=document.getElementById('shTitle');t.textContent=title;letters(t);
-    document.getElementById('shKind').textContent=txt(h.querySelector('.kind'));
-    document.getElementById('shP').textContent=clip(txt(h.querySelector('.card-body p')),260);
-    document.getElementById('shDate').textContent='· released '+fmt(cards[0].d);
-    var go=document.getElementById('shGo');go.href=abs2(h.getAttribute('href'));go.innerHTML='▶ &nbsp;Open '+esc(title.split(':')[0]);
-    document.getElementById('shShot').href=go.href;if(img)document.getElementById('shImg').src=abs2(img.getAttribute('src'));
-    var rest=cards.slice(1,4);if(rest.length){document.getElementById('shRR').innerHTML=rest.map(function(x){var c=x.el,im=c.querySelector('img.shot');return '<a href="'+esc(abs2(c.getAttribute('href')))+'" target="_blank" rel="noopener"><span class="nb">NEW · '+fmt(x.d)+'</span>'+(im?'<img src="'+esc(abs2(im.getAttribute('src')))+'" alt="" loading="lazy">':'<span class="ph">✦</span>')+'<span><b>'+esc(txt(c.querySelector('h3')))+'</b><small>'+esc(clip(txt(c.querySelector('.kind')),60))+'</small></span></a>'}).join('');document.getElementById('shRail').hidden=false}
-    document.getElementById('shLive').textContent='Live from the EL Publishing Hub · '+cards.length+' release'+(cards.length>1?'s':'')+' in the last three weeks · refreshed '+fmt(now);
-  }).catch(function(){});
-}catch(e){}})();
-// ===== From the hub this week: read the live hub pages (same origin) =====
-(function(){try{
-  var HUB='https://radan55.github.io/everyteacher/';
-  var abs=Math.floor((new Date()-new Date(2026,7,3))/6048e5);
-  function txt(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
-  function clip(t,n){return t.length>n?t.slice(0,n).replace(/\s+\S*$/,'')+'…':t}
-  function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function card(k,h,p,href,img,cls){return '<a class="fc'+(cls?' '+cls:'')+'" href="'+esc(href)+'" target="_blank" rel="noopener">'+(img?'<img src="'+esc(img)+'" alt="" loading="lazy">':'')+'<span class="k">'+esc(k)+'</span><h3>'+esc(h)+'</h3><p>'+esc(p)+'</p><span class="go">Open →</span></a>'}
-  function abs2(href){return /^https?:/.test(href)?href:HUB+href}
-  fetch(HUB+'index.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
-    var doc=new DOMParser().parseFromString(html,'text/html');
-    var cards=[].slice.call(doc.querySelectorAll('section .cards .card'));if(!cards.length)return;
-    var out=[];
-    var f=doc.querySelector('a.feature');
-    if(f)out.push(card(txt(f.querySelector('.feature-k'))||'Featured',txt(f.querySelector('.feature-t')),clip(txt(f.querySelector('.feature-p')),160),abs2(f.getAttribute('href')),null,'feat'));
-    var n=cards.length;
-    // A hub card with data-pin-until="YYYY-MM-DD" is the resource of the week until that date (new releases).
-    var pin=cards.filter(function(x){var d=x.getAttribute('data-pin-until');return d&&new Date(d+'T23:59:59')>=new Date()})[0];
+  letters(document.getElementById('shTitle'));
+
+  fetch(HUB+'catalog.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(C){
+    if(!C||!C.length)return;
+    var n=C.length;
+
+    // --- Now showing: anything released in the last three weeks ---
+    var fresh=C.filter(function(r){return r['new']})
+      .map(function(r){r=Object.assign({},r);r.d=new Date(r['new']+'T12:00:00');return r})
+      .filter(function(r){return !isNaN(r.d)&&r.d<=now&&(now-r.d)/864e5<=DAYS})
+      .sort(function(a,b){return b.d-a.d});
+    if(fresh.length){
+      var h=fresh[0],ti=document.getElementById('shTitle');
+      ti.textContent=h.t;letters(ti);
+      document.getElementById('shKind').textContent=h.f;
+      document.getElementById('shP').textContent=clip(h.o,260);
+      document.getElementById('shDate').textContent='· released '+fmt(h.d);
+      var go=document.getElementById('shGo');
+      go.href=abs2(h.u);go.innerHTML='▶ &nbsp;Open '+esc(h.t.split(':')[0]);
+      document.getElementById('shShot').href=go.href;
+      if(h.th)document.getElementById('shImg').src=abs2(h.th);
+      var rest=fresh.slice(1,4);
+      if(rest.length){
+        document.getElementById('shRR').innerHTML=rest.map(function(r){
+          return '<a href="'+esc(abs2(r.u))+'" target="_blank" rel="noopener"><span class="nb">NEW · '+fmt(r.d)+'</span>'+
+            (r.th?'<img src="'+esc(abs2(r.th))+'" alt="" loading="lazy">':'<span class="ph">✦</span>')+
+            '<span><b>'+esc(r.t)+'</b><small>'+esc(clip(r.f,60))+'</small></span></a>'}).join('');
+        document.getElementById('shRail').hidden=false;
+      }
+      document.getElementById('shLive').textContent='Live from the EL Publishing Hub · '+fresh.length+
+        ' release'+(fresh.length>1?'s':'')+' in the last three weeks · refreshed '+fmt(now);
+    }
+
+    // --- From the hub this week: a pinned pick, then the rotation ---
+    var abs=Math.floor((now-new Date(2026,7,3))/6048e5);
+    var pin=C.filter(function(r){return r.pin&&new Date(r.pin+'T23:59:59')>=now})[0];
+    var out=[card('Featured · updated weekly','EL Tech Radar',
+      'New tools for English learners, verified and sorted by lane.',
+      HUB+'tech-radar.html',null,'feat')];
     [[0,'Resource of the week'],[1,'Also this week'],[2,'Also this week']].forEach(function(x){
-      var c=cards[(((abs+x[0])%n)+n)%n];if(pin){if(x[0]===0)c=pin;else{c=cards[(((abs+x[0]-1)%n)+n)%n];if(c===pin)c=cards[(((abs+x[0])%n)+n)%n]}}
-      var img=c.querySelector('img.shot');
-      out.push(card(x[1],txt(c.querySelector('h3')),clip(txt(c.querySelector('.card-body p')),120),abs2(c.getAttribute('href')),img?abs2(img.getAttribute('src')):null))});
+      var c=C[(((abs+x[0])%n)+n)%n];
+      if(pin){ if(x[0]===0)c=pin;
+        else{c=C[(((abs+x[0]-1)%n)+n)%n]; if(c===pin)c=C[(((abs+x[0])%n)+n)%n]} }
+      out.push(card(x[1],c.t,clip(c.o,120),abs2(c.u),c.th?abs2(c.th):null));
+    });
     document.getElementById('freshGrid').innerHTML=out.join('');
-    // Today bar: announce a pinned (newly released) hub resource
-    var td=document.getElementById('tdList');if(pin&&td){td.insertAdjacentHTML('afterbegin','<li><b>New on the hub: <a href="'+esc(abs2(pin.getAttribute('href')))+'" target="_blank" rel="noopener" style="color:inherit">'+esc(txt(pin.querySelector('h3')))+'</a></b></li>')}
-    var live=document.getElementById('freshLive');if(live)live.innerHTML='<i aria-hidden="true"></i>Live · '+n+' resources on the hub right now · refreshed '+new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'});
+
+    var td=document.getElementById('tdList');
+    if(pin&&td)td.insertAdjacentHTML('afterbegin','<li><b>New on the hub: <a href="'+
+      esc(abs2(pin.u))+'" target="_blank" rel="noopener" style="color:inherit">'+esc(pin.t)+'</a></b></li>');
+    var live=document.getElementById('freshLive');
+    if(live)live.innerHTML='<i aria-hidden="true"></i>Live · '+n+
+      ' resources on the hub right now · refreshed '+fmt(now);
   }).catch(function(){});
+
   fetch(HUB+'policy-brief.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(html){
     var m=/label:"([^"]+)",\s*date:"([^"]+)",\s*lead:"((?:[^"\\]|\\.)*)"/.exec(html);if(!m)return;
     var L=document.getElementById('pbLabel'),P=document.getElementById('pbLead');
